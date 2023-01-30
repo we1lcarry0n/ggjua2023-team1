@@ -9,6 +9,7 @@ public class HardMiniGame : MonoBehaviour
     public Slider reactionCountSlider;
     public RectTransform pointerContainer;
     public RectTransform reactionBar;
+    public Button repeatButton;
 
     public int reactionCount;
 
@@ -27,7 +28,6 @@ public class HardMiniGame : MonoBehaviour
 
     void Start()
     {
-        StartCoroutine(ShowMiniGame());
         StartCoroutine(StartMiniGame());
     }
 
@@ -108,25 +108,30 @@ public class HardMiniGame : MonoBehaviour
 
     private IEnumerator StartMiniGame()
     {
+        StartCoroutine(ShowMiniGame());
         pointerContainer.localEulerAngles = Vector3.zero;
         SpawnReactionBar();
         reactionCountSlider.maxValue = reactionCount;
-        yield return new WaitForSeconds(1f);
+        yield return new WaitForSeconds(1.5f);
         stopGame = false;
     }
 
     public void RestartGame()
     {
-        pointerAngle = 0;
-        reactionBarAngle = 0;
-        miniGameSlider.value = 0;
-
         StartCoroutine(StartMiniGame());
+        StartCoroutine(HideRepeatButton());
     }
 
     private void GameOver()
     {
         StartCoroutine(HideMiniGame());
+        StartCoroutine(ShowRepeatButton());
+        pointerAngle = 0;
+        currentPointerAngle = 0;
+        currentReactionBarAngle = 0;
+        reactionBarAngle = 0;
+        miniGameSlider.value = 0;
+        isReverse = false;
         stopGame = true;
         Debug.Log("You lose");
     }
@@ -158,7 +163,30 @@ public class HardMiniGame : MonoBehaviour
             transform.localScale = Vector3.one * (1f - i);
             yield return null;
         }
-        transform.localScale = Vector3.one;
-        gameObject.SetActive(!gameObject.activeSelf);
+        transform.localScale = Vector3.zero;
+    }
+
+    private IEnumerator ShowRepeatButton()
+    {
+        repeatButton.gameObject.SetActive(!repeatButton.gameObject.activeSelf);
+        repeatButton.transform.localScale = Vector3.zero;
+        for (float i = 0; i < 1f; i += Time.deltaTime)
+        {
+            repeatButton.transform.localScale = Vector3.one * i;
+            yield return null;
+        }
+        repeatButton.transform.localScale = Vector3.one;
+    }
+
+    private IEnumerator HideRepeatButton()
+    {
+        repeatButton.transform.localScale = Vector3.zero;
+        for (float i = 0; i < 1f; i += Time.deltaTime)
+        {
+            repeatButton.transform.localScale = Vector3.one * (1f - i);
+            yield return null;
+        }
+        repeatButton.transform.localScale = Vector3.one;
+        repeatButton.gameObject.SetActive(!repeatButton.gameObject.activeSelf);
     }
 }
