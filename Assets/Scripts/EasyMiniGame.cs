@@ -24,6 +24,7 @@ public class EasyMiniGame : MonoBehaviour
 
     void Start()
     {
+        StartCoroutine(ShowMiniGame());
         StartCoroutine(StartMiniGame());
     }
 
@@ -45,21 +46,18 @@ public class EasyMiniGame : MonoBehaviour
                 }
                 else
                 {
-                    stopGame = true;
+                    GameOver();
                 }
             }
 
             if (pointerAngle > checkReaction)
             {
-                stopGame = true;
-                Debug.Log("You lose");
+                GameOver();
             }
 
             if (checkCount == reactionCount)
             {
-                checkCount = 0;
-                stopGame = true;
-                Debug.Log("You win");
+                WinGame();
             }
         }
     }
@@ -94,5 +92,43 @@ public class EasyMiniGame : MonoBehaviour
         miniGameSlider.value = 0;
 
         StartCoroutine(StartMiniGame());
+    }
+
+    private void GameOver()
+    {
+        StartCoroutine(HideMiniGame());
+        stopGame = true;
+        Debug.Log("You lose");
+    }
+
+    private void WinGame()
+    {
+        StartCoroutine(HideMiniGame());
+        checkCount = 0;
+        stopGame = true;
+        Debug.Log("You win");
+    }
+
+    private IEnumerator ShowMiniGame()
+    {
+        transform.localScale = Vector3.zero;
+        for (float i = 0; i < 1f; i += Time.deltaTime)
+        {
+            transform.localScale = Vector3.one * i;
+            yield return null;
+        }
+        transform.localScale = Vector3.one;
+    }
+
+    private IEnumerator HideMiniGame()
+    {
+        transform.localScale = Vector3.zero;
+        for (float i = 0; i < 1f; i += Time.deltaTime)
+        {
+            transform.localScale = Vector3.one * (1f - i);
+            yield return null;
+        }
+        transform.localScale = Vector3.one;
+        gameObject.SetActive(!gameObject.activeSelf);
     }
 }
