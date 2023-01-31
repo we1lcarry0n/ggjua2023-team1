@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public class PlayerItemAndConstructController : MonoBehaviour
 {
@@ -12,6 +13,9 @@ public class PlayerItemAndConstructController : MonoBehaviour
     public int countOfRoots;
     private int countOfPuppet;
     private int countOfUpgratedPuppet;
+    public TMP_Text textCountOfRoots;
+    public TMP_Text textCountOfPuppets;
+    public TMP_Text textCountOfUpPuppets;
 
     #endregion
 
@@ -29,11 +33,8 @@ public class PlayerItemAndConstructController : MonoBehaviour
             if (Input.GetKey(KeyCode.E))
             {
                 countOfRoots++;
+                textCountOfRoots.text = countOfRoots.ToString();
                 isItemInDistance = false;
-            }
-            if (Input.GetKey(KeyCode.F))
-            {
-                
             }
         }
     }
