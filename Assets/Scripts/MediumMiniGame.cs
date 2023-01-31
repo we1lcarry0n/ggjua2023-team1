@@ -9,18 +9,21 @@ public class MediumMiniGame : MonoBehaviour
     public Slider reactionCountSlider;
     public RectTransform pointerContainer;
     public RectTransform reactionBar;
+    public GameObject repeatTab;
+    public GameObject winningTab;
 
     public int reactionCount;
 
     public float reactionLength;
     public float pointerSpeed;
 
-    private float pointerAngle;
-    private float reactionBarAngle;
-    private float checkReaction;
-    private int checkCount;
+    public float pointerAngle;
+    public float reactionBarAngle;
+    public float checkReaction;
+    public int checkCount;
 
     private bool stopGame = true;
+    private bool canRestart;
 
     void Start()
     {
@@ -43,6 +46,10 @@ public class MediumMiniGame : MonoBehaviour
                     SpawnReactionBar();
                     checkCount++;
                     reactionCountSlider.value++;
+                    if (checkCount == reactionCount)
+                    {
+                        WinGame();
+                    }
                 }
                 else
                 {
@@ -54,10 +61,12 @@ public class MediumMiniGame : MonoBehaviour
             {
                 GameOver();
             }
-
-            if (checkCount == reactionCount)
+        }else if (stopGame && canRestart)
+        {
+            if (Input.GetKeyDown(KeyCode.R))
             {
-                WinGame();
+                RestartGame();
+                canRestart = false;
             }
         }
     }
@@ -78,26 +87,31 @@ public class MediumMiniGame : MonoBehaviour
 
     private IEnumerator StartMiniGame()
     {
+        StartCoroutine(ShowMiniGame());
         pointerContainer.localEulerAngles = Vector3.zero;
         SpawnReactionBar();
         reactionCountSlider.maxValue = reactionCount;
-        yield return new WaitForSeconds(2f);
+        yield return new WaitForSeconds(1.5f);
         stopGame = false;
     }
 
     public void RestartGame()
     {
-        pointerAngle = 0;
-        reactionBarAngle = 0;
+        reactionCountSlider.value = 0;
         miniGameSlider.value = 0;
-
         StartCoroutine(StartMiniGame());
+        StartCoroutine(HideRepeatButton());
     }
 
     private void GameOver()
     {
         StartCoroutine(HideMiniGame());
+        StartCoroutine(ShowRepeatButton());
+        pointerAngle = 0;
+        reactionBarAngle = 0;
+        checkCount = 0;
         stopGame = true;
+        canRestart = true;
         Debug.Log("You lose");
     }
 
@@ -107,6 +121,7 @@ public class MediumMiniGame : MonoBehaviour
         checkCount = 0;
         stopGame = true;
         Debug.Log("You win");
+        StartCoroutine(ShowWinningTable());
     }
 
     private IEnumerator ShowMiniGame()
@@ -122,13 +137,56 @@ public class MediumMiniGame : MonoBehaviour
 
     private IEnumerator HideMiniGame()
     {
-        transform.localScale = Vector3.zero;
+        transform.localScale = Vector3.one;
         for (float i = 0; i < 1f; i += Time.deltaTime)
         {
             transform.localScale = Vector3.one * (1f - i);
             yield return null;
         }
-        transform.localScale = Vector3.one;
-        gameObject.SetActive(!gameObject.activeSelf);
+        transform.localScale = Vector3.zero;
+    }
+
+    private IEnumerator ShowRepeatButton()
+    {
+        repeatTab.SetActive(!repeatTab.activeSelf);
+        repeatTab.transform.localScale = Vector3.zero;
+        for (float i = 0; i < 1f; i += Time.deltaTime)
+        {
+            repeatTab.transform.localScale = Vector3.one * i;
+            yield return null;
+        }
+        repeatTab.transform.localScale = Vector3.one;
+    }
+
+    private IEnumerator HideRepeatButton()
+    {
+        repeatTab.transform.localScale = Vector3.one;
+        for (float i = 0; i < 1f; i += Time.deltaTime)
+        {
+            repeatTab.transform.localScale = Vector3.one * (1f - i);
+            yield return null;
+        }
+        repeatTab.transform.localScale = Vector3.zero;
+        repeatTab.SetActive(!repeatTab.activeSelf);
+    }
+
+    private IEnumerator ShowWinningTable()
+    {
+        winningTab.SetActive(!winningTab.activeSelf);
+        winningTab.transform.localScale = Vector3.zero;
+        for (float i = 0; i < 1f; i += Time.deltaTime)
+        {
+            winningTab.transform.localScale = Vector3.one * i;
+            yield return null;
+        }
+        winningTab.transform.localScale = Vector3.one;
+
+        for (float i = 0; i < 1f; i += Time.deltaTime)
+        {
+            winningTab.transform.localScale = Vector3.one * (1f - i);
+            yield return null;
+        }
+        winningTab.transform.localScale = Vector3.zero;
+        winningTab.SetActive(!winningTab.activeSelf);
     }
 }
