@@ -17,10 +17,10 @@ public class MediumMiniGame : MonoBehaviour
     public float reactionLength;
     public float pointerSpeed;
 
-    public float pointerAngle;
-    public float reactionBarAngle;
-    public float checkReaction;
-    public int checkCount;
+    private float pointerAngle;
+    private float reactionBarAngle;
+    private float checkReaction;
+    private int checkCount;
 
     private bool stopGame = true;
     private bool canRestart;
