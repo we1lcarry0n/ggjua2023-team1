@@ -4,8 +4,10 @@
 TagManager:
   serializedVersion: 2
   tags:
-  - Items
   - Constructor
+  - BlessingAltar
+  - GiftAltar
+  - Root
   layers:
   - Default
   - TransparentFX
