@@ -11,6 +11,8 @@ public class MediumMiniGame : MonoBehaviour
     public RectTransform reactionBar;
     public GameObject repeatTab;
     public GameObject winningTab;
+    public GameObject miniGameBox;
+    private PlayerItemStats player;
 
     public int reactionCount;
 
@@ -24,11 +26,13 @@ public class MediumMiniGame : MonoBehaviour
 
     private bool stopGame = true;
     private bool canRestart;
+    public bool isMavka;
+    public bool isCraft;
 
     void Start()
     {
-        StartCoroutine(ShowMiniGame());
         StartCoroutine(StartMiniGame());
+        player = GameObject.Find("Player").GetComponent<PlayerItemStats>();
     }
 
     // Update is called once per frame
@@ -61,13 +65,17 @@ public class MediumMiniGame : MonoBehaviour
             {
                 GameOver();
             }
-        }else if (stopGame && canRestart)
+        }
+        
+        if (Input.GetKeyDown(KeyCode.R) && stopGame && canRestart)
         {
-            if (Input.GetKeyDown(KeyCode.R))
-            {
-                RestartGame();
-                canRestart = false;
-            }
+            RestartGame();
+            canRestart = false;
+        }
+
+        if (Input.GetKeyDown(KeyCode.Escape) && isCraft)
+        {
+            Destroy(miniGameBox);
         }
     }
 
@@ -106,18 +114,30 @@ public class MediumMiniGame : MonoBehaviour
     private void GameOver()
     {
         StartCoroutine(HideMiniGame());
-        StartCoroutine(ShowRepeatButton());
+        if (!isMavka)
+        {
+            StartCoroutine(ShowRepeatButton());
+            canRestart = true;
+        }
+        if (isMavka)
+        {
+            player.countOfPuppet--;
+        }
         pointerAngle = 0;
         reactionBarAngle = 0;
         checkCount = 0;
         stopGame = true;
-        canRestart = true;
         Debug.Log("You lose");
     }
 
     private void WinGame()
     {
         StartCoroutine(HideMiniGame());
+        if (isCraft)
+        {
+            player.countOfRoots--;
+            player.countOfPuppet++;
+        }
         checkCount = 0;
         stopGame = true;
         Debug.Log("You win");
@@ -144,6 +164,10 @@ public class MediumMiniGame : MonoBehaviour
             yield return null;
         }
         transform.localScale = Vector3.zero;
+        if (isMavka)
+        {
+            Destroy(miniGameBox, 2f);
+        }
     }
 
     private IEnumerator ShowRepeatButton()
@@ -188,5 +212,6 @@ public class MediumMiniGame : MonoBehaviour
         }
         winningTab.transform.localScale = Vector3.zero;
         winningTab.SetActive(!winningTab.activeSelf);
+        Destroy(miniGameBox, 2f);
     }
 }

@@ -11,6 +11,8 @@ public class EasyMiniGame : MonoBehaviour
     public RectTransform reactionBar;
     public GameObject repeatTab;
     public GameObject winningTab;
+    public GameObject miniGameBox;
+    private PlayerItemStats player;
 
     public int reactionCount;
 
@@ -24,6 +26,7 @@ public class EasyMiniGame : MonoBehaviour
 
     private bool stopGame = true;
     private bool canRestart;
+    public bool isFireFly;
 
     void Start()
     {
@@ -64,13 +67,10 @@ public class EasyMiniGame : MonoBehaviour
             }
         }
 
-        if (stopGame && canRestart)
+        if (Input.GetKeyDown(KeyCode.R) && stopGame && canRestart)
         {
-            if (Input.GetKeyDown(KeyCode.R))
-            {
-                RestartGame();
-                canRestart = false;
-            }
+            RestartGame();
+            canRestart = false;
         }
     }
 
@@ -109,12 +109,15 @@ public class EasyMiniGame : MonoBehaviour
     private void GameOver()
     {
         StartCoroutine(HideMiniGame());
-        StartCoroutine(ShowRepeatTable());
+        if (!isFireFly)
+        {
+            StartCoroutine(ShowRepeatTable());
+            canRestart = true;
+        }
         pointerAngle = 0;
         reactionBarAngle = 0;
         checkCount = 0;
         stopGame = true;
-        canRestart = true;
         Debug.Log("You lose");
     }
 
@@ -147,6 +150,10 @@ public class EasyMiniGame : MonoBehaviour
             yield return null;
         }
         transform.localScale = Vector3.zero;
+        if (isFireFly)
+        {
+            Destroy(miniGameBox, 2f);
+        }
     }
 
     private IEnumerator ShowRepeatTable()

@@ -11,6 +11,8 @@ public class HardMiniGame : MonoBehaviour
     public RectTransform reactionBar;
     public GameObject repeatTab;
     public GameObject winningTab;
+    public GameObject miniGameBox;
+    private PlayerItemStats player;
 
     public int reactionCount;
 
@@ -27,10 +29,13 @@ public class HardMiniGame : MonoBehaviour
     private bool isReverse;
     private bool stopGame = true;
     private bool canRestart;
+    public bool isPoludnitsa;
+    public bool isBless;
 
     void Start()
     {
         StartCoroutine(StartMiniGame());
+        player = GameObject.Find("Player").GetComponent<PlayerItemStats>();
     }
 
     // Update is called once per frame
@@ -71,13 +76,15 @@ public class HardMiniGame : MonoBehaviour
             }
         }
 
-        if (stopGame && canRestart)
+        if (Input.GetKeyDown(KeyCode.R) && stopGame && canRestart)
         {
-            if (Input.GetKeyDown(KeyCode.R))
-            {
-                RestartGame();
-                canRestart = false;
-            }
+            RestartGame();
+            canRestart = false;
+        }
+
+        if (Input.GetKeyDown(KeyCode.Escape) && isBless)
+        {
+            Destroy(miniGameBox);
         }
     }
 
@@ -140,14 +147,21 @@ public class HardMiniGame : MonoBehaviour
     private void GameOver()
     {
         StartCoroutine(HideMiniGame());
-        StartCoroutine(ShowRepeatTable());
+        if (!isPoludnitsa)
+        {
+            StartCoroutine(ShowRepeatTable());
+            canRestart = true;
+        }
+        if (isPoludnitsa)
+        {
+            player.countOfUpgratedPuppet--;
+        }
         pointerAngle = 0;
         currentPointerAngle = 0;
         currentReactionBarAngle = 0;
         reactionBarAngle = 0;
         checkCount = 0;
         isReverse = false;
-        canRestart = true;
         stopGame = true;
         Debug.Log("You lose");
     }
@@ -155,6 +169,11 @@ public class HardMiniGame : MonoBehaviour
     private void WinGame()
     {
         StartCoroutine(HideMiniGame());
+        if (isBless)
+        {
+            player.countOfPuppet--;
+            player.countOfUpgratedPuppet++;
+        }
         checkCount = 0;
         stopGame = true;
         Debug.Log("You win");
@@ -174,13 +193,17 @@ public class HardMiniGame : MonoBehaviour
 
     private IEnumerator HideMiniGame()
     {
-        transform.localScale = Vector3.zero;
+        transform.localScale = Vector3.one;
         for (float i = 0; i < 1f; i += Time.deltaTime)
         {
             transform.localScale = Vector3.one * (1f - i);
             yield return null;
         }
         transform.localScale = Vector3.zero;
+        if (isPoludnitsa)
+        {
+            Destroy(miniGameBox, 2f);
+        }
     }
 
     private IEnumerator ShowRepeatTable()
@@ -225,5 +248,6 @@ public class HardMiniGame : MonoBehaviour
         }
         winningTab.transform.localScale = Vector3.zero;
         winningTab.SetActive(!winningTab.activeSelf);
+        Destroy(miniGameBox, 2f);
     }
 }
