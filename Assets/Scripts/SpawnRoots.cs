@@ -7,7 +7,7 @@ public class SpawnRoots : MonoBehaviour
 {
     public Vector3[] spawnPoints;
     public GameObject rootToSpawn;
-    public Dictionary<int, int> scenesValueRoots = new()
+    private readonly Dictionary<int, int> scenesValueRoots = new()
     {
         {1, 2},
         {2, 3},
@@ -32,17 +32,17 @@ public class SpawnRoots : MonoBehaviour
     /// <param name="sizeOfArray">Розмірність масиву</param>
     private void SetRandomPointsViaHashSet(int sizeOfArray)
     {
-        var rndIndices = new HashSet<int>();
-        var rng = new System.Random();
+        HashSet<int> randomPoints = new();
+        System.Random randomizer = new();
         int iter = 0;
-        while(rndIndices.Count != sizeOfArray)
+        while(randomPoints.Count != sizeOfArray)
         {
-            int index = rng.Next(sizeOfArray);
-            rndIndices.Add(index);
+            int index = randomizer.Next(sizeOfArray);
+            randomPoints.Add(index);
             iter++;
         }
 
-        foreach (int currentPoint in rndIndices)
+        foreach (int currentPoint in randomPoints)
         {
             Instantiate(rootToSpawn, spawnPoints[currentPoint], Quaternion.identity);
         }
