@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using System.Linq;
 
 public class SpawnRoots : MonoBehaviour
 {
@@ -20,7 +21,6 @@ public class SpawnRoots : MonoBehaviour
     {
         //int currentScene = SceneManager.GetActiveScene().buildIndex;
         int currentScene = 5;
-        Debug.Log(currentScene);
         if (scenesValueRoots.TryGetValue(currentScene, out int numberOfRootsOnScene))
         {
             SetRandomPoints(numberOfRootsOnScene);
@@ -36,18 +36,27 @@ public class SpawnRoots : MonoBehaviour
     {
         int currentPoint;
         int i = 0;
+        currentPoint = NewRandomNumber();
+        int[] uniquePoints = new int[sizeOfArray];
+        uniquePoints[i] = currentPoint;
+        i++;
 
-        while (i < sizeOfArray){
-            currentPoint = NewRandomNumber();
-            if (Physics.CheckSphere(spawnPoints[currentPoint], 1))
+        while (i < sizeOfArray)
+        {
+            if (uniquePoints.Contains(currentPoint))
             {
                 currentPoint = NewRandomNumber();
             }
             else
             {
-                Instantiate(rootToSpawn, spawnPoints[currentPoint], Quaternion.identity);
+                uniquePoints[i] = currentPoint;
                 i++;
             }
+        }
+        
+        for (i = 0; i < uniquePoints.Length; i++)
+        {
+            Instantiate(rootToSpawn, spawnPoints[uniquePoints[i]], Quaternion.identity);
         }
     }
 
