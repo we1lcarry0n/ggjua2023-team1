@@ -6,7 +6,7 @@ using UnityEngine.EventSystems;
 
 public class Player : MonoBehaviour
 {
-    public float speed;
+    public float baseSpeed;
     public float rotationSpeed;
     public float force;
     public float sprint;
@@ -19,54 +19,29 @@ public class Player : MonoBehaviour
 
     private void Start()
     {
-        //rb = GetComponent<Rigidbody>();
         chc = GetComponent<CharacterController>();
     }
 
-
     private void Update()
     {
-        if (chc.isGrounded)
-        {
-
-        }
         float x = Input.GetAxis("Horizontal");
         float z = Input.GetAxis("Vertical");
 
         movementDirection = Vector3.zero;
-        Debug.Log(chc.isGrounded);
-        
-        
         movementDirection = x * Vector3.right + z * Vector3.forward;
-
         movementDirection.Normalize();
+
         ApplyGravity();
-
-        if (movementDirection.z == 0 && movementDirection.x == 0)
-        {
-            animator.SetFloat("Speed", 0, .1f, Time.deltaTime);
-        }
-        else if (movementDirection == Vector3.zero)
-        {
-            animator.SetFloat("Speed", .15f, .1f, Time.deltaTime);
-        }
-        else
-        {
-            animator.SetFloat("Speed", 1, .1f, Time.deltaTime);
-            transform.rotation = Quaternion.Lerp(transform.rotation, Quaternion.LookRotation(movementDirection), Time.deltaTime*rotationSpeed);
-        }
-
-        chc.Move(movementDirection * speed * Time.deltaTime);
+        AdjustAnimation();
 
         if (Input.GetKeyDown(KeyCode.Q))
         {
             //rb.AddForce(transform.forward * force, ForceMode.Impulse);
         }
 
-        if (Input.GetKeyDown(KeyCode.LeftShift))
-        {
-            //rb.AddForce(transform.forward * sprint);
-        }
+        float speed = Input.GetKey(KeyCode.LeftShift) ? baseSpeed*sprint : baseSpeed;
+
+        chc.Move(movementDirection * speed * Time.deltaTime);
     }
 
     private void ApplyGravity()
@@ -78,6 +53,23 @@ public class Player : MonoBehaviour
         else
         {
             movementDirection.y = - gravity * Time.deltaTime;
+        }
+    }
+
+    private void AdjustAnimation()
+    {
+        if (movementDirection.z == 0 && movementDirection.x == 0)
+        {
+            animator.SetFloat("Speed", 0, .1f, Time.deltaTime);
+        }
+        else if (movementDirection == Vector3.zero)
+        {
+            animator.SetFloat("Speed", .15f, .1f, Time.deltaTime);
+        }
+        else
+        {
+            animator.SetFloat("Speed", 1, .1f, Time.deltaTime);
+            transform.rotation = Quaternion.Lerp(transform.rotation, Quaternion.LookRotation(movementDirection), Time.deltaTime * rotationSpeed);
         }
     }
 }

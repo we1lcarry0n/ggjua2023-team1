@@ -3341,10 +3341,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 44cc269cb21f52d4c80b75eac3a129be, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 5
+  baseSpeed: 5
   rotationSpeed: 5
   force: 4
-  sprint: 7
+  sprint: 1.3
   gravity: 20
   animator: {fileID: 1578662951}
 --- !u!136 &2063557800
