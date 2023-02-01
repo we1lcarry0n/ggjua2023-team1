@@ -24,6 +24,7 @@ public class RootsAndConstructorController : MonoBehaviour
             if (Input.GetKey(KeyCode.E) && this.gameObject.CompareTag("Root"))
             {
                 player.countOfRoots++;
+                this.gameObject.GetComponentInParent<RootController>().isFree = true;
                 Destroy(this.gameObject);
             }
 

@@ -5,7 +5,43 @@ using UnityEngine.SceneManagement;
 
 public class SpawnRoots : MonoBehaviour
 {
-    public Vector3[] spawnPoints;
+    public RootController[] rootControllers;
+    public GameObject rootToSpawn;
+
+    public int currentPoint;
+    public Vector3 currentPosition;
+
+    private void Start()
+    {
+        currentPoint = Random.Range(0, 4);
+        SpawnRootOnPoint();
+    }
+    private void Update()
+    {
+        while (!rootControllers[currentPoint].isFree)
+        {
+            currentPoint = Random.Range(0, 4);
+            Debug.Log(currentPoint);
+        }
+
+        //SpawnTime();
+        SpawnRootOnPoint();
+    }
+
+    private void SpawnRootOnPoint()
+    {
+        currentPosition = rootControllers[currentPoint].transform.position;
+        Instantiate(rootToSpawn, currentPosition, Quaternion.identity);
+        rootControllers[currentPoint].isFree = false;
+    }
+
+    private IEnumerator SpawnTime()
+    {
+        yield return new WaitForSeconds(0.5f);
+    }
+
+
+    /*public Vector3[] spawnPoints;
     public GameObject rootToSpawn;
     private readonly Dictionary<int, int> scenesValueRoots = new()
     {
@@ -46,5 +82,5 @@ public class SpawnRoots : MonoBehaviour
         {
             Instantiate(rootToSpawn, spawnPoints[currentPoint], Quaternion.identity);
         }
-    }
+    }*/
 }
