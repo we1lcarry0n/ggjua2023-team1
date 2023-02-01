@@ -6,16 +6,7 @@ using TMPro;
 public class RootsAndConstructorController : MonoBehaviour
 {
     public PlayerItemStats player;
-    public TMP_Text textCountOfRoots;
-    public TMP_Text textCountOfPuppets;
-    public TMP_Text textCountOfUpPuppets;
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
 
-    // Update is called once per frame
     void Update()
     {
         if (Vector3.Distance(transform.position,
@@ -53,9 +44,5 @@ public class RootsAndConstructorController : MonoBehaviour
             }
 
         }
-
-        textCountOfRoots.text = player.countOfRoots.ToString();
-        textCountOfPuppets.text = player.countOfPuppet.ToString();
-        textCountOfUpPuppets.text = player.countOfUpgratedPuppet.ToString();
     }
 }
