@@ -68,7 +68,7 @@ public class Player : MonoBehaviour
         }
         else
         {
-            animator.SetFloat("Speed", 1, .1f, Time.deltaTime);
+            animator.SetFloat("Speed", Input.GetKey(KeyCode.LeftShift) ? 1f : .65f, .1f, Time.deltaTime);
             transform.rotation = Quaternion.Lerp(transform.rotation, Quaternion.LookRotation(movementDirection), Time.deltaTime * rotationSpeed);
         }
     }
