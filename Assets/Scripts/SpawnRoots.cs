@@ -19,7 +19,7 @@ public class SpawnRoots : MonoBehaviour
     void Start()
     {
         //int currentScene = SceneManager.GetActiveScene().buildIndex;
-        int currentScene = 1;
+        int currentScene = 5;
         Debug.Log(currentScene);
         if (scenesValueRoots.TryGetValue(currentScene, out int numberOfRootsOnScene))
         {
@@ -35,10 +35,19 @@ public class SpawnRoots : MonoBehaviour
     private void SetRandomPoints(int sizeOfArray)
     {
         int currentPoint;
-        for (int i = 0; i < sizeOfArray; i++)
-        {
+        int i = 0;
+
+        while (i < sizeOfArray){
             currentPoint = NewRandomNumber();
-            Instantiate(rootToSpawn, spawnPoints[currentPoint], Quaternion.identity);
+            if (Physics.CheckSphere(spawnPoints[currentPoint], 1))
+            {
+                currentPoint = NewRandomNumber();
+            }
+            else
+            {
+                Instantiate(rootToSpawn, spawnPoints[currentPoint], Quaternion.identity);
+                i++;
+            }
         }
     }
 
