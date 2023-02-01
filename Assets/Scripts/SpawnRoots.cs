@@ -2,7 +2,6 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
-using System.Linq;
 
 public class SpawnRoots : MonoBehaviour
 {
@@ -19,11 +18,10 @@ public class SpawnRoots : MonoBehaviour
 
     void Start()
     {
-        //int currentScene = SceneManager.GetActiveScene().buildIndex;
-        int currentScene = 5;
+        int currentScene = SceneManager.GetActiveScene().buildIndex;
         if (scenesValueRoots.TryGetValue(currentScene, out int numberOfRootsOnScene))
         {
-            SetRandomPoints(numberOfRootsOnScene);
+            SetRandomPointsViaHashSet(numberOfRootsOnScene);
         }
         Destroy(rootToSpawn);
     }
@@ -32,49 +30,21 @@ public class SpawnRoots : MonoBehaviour
     /// Повертає масив рандомних значень розмірністю n 
     /// </summary>
     /// <param name="sizeOfArray">Розмірність масиву</param>
-    private void SetRandomPoints(int sizeOfArray)
+    private void SetRandomPointsViaHashSet(int sizeOfArray)
     {
-        int currentPoint;
-        int i = 0;
-        currentPoint = NewRandomNumber();
-        int[] uniquePoints = new int[sizeOfArray];
-        uniquePoints[i] = currentPoint;
-        i++;
-
-        while (i < sizeOfArray)
+        var rndIndices = new HashSet<int>();
+        var rng = new System.Random();
+        int iter = 0;
+        while(rndIndices.Count != sizeOfArray)
         {
-            if (uniquePoints.Contains(currentPoint))
-            {
-                currentPoint = NewRandomNumber();
-            }
-            else
-            {
-                uniquePoints[i] = currentPoint;
-                i++;
-            }
+            int index = rng.Next(sizeOfArray);
+            rndIndices.Add(index);
+            iter++;
         }
-        
-        for (i = 0; i < uniquePoints.Length; i++)
+
+        foreach (int currentPoint in rndIndices)
         {
-            Instantiate(rootToSpawn, spawnPoints[uniquePoints[i]], Quaternion.identity);
+            Instantiate(rootToSpawn, spawnPoints[currentPoint], Quaternion.identity);
         }
     }
-
-    private int randomNumber;
-    private int lastNumber;
-    /// <summary>
-    /// Генерує рандомне неповторюване число
-    /// </summary>
-    private int NewRandomNumber()
-    {
-        randomNumber = Random.Range(0, spawnPoints.Length-1);
-        if (randomNumber == lastNumber)
-        {
-            randomNumber = Random.Range(0, spawnPoints.Length-1);
-        }
-        lastNumber = randomNumber;
-
-        return lastNumber;
-    }
-
 }
