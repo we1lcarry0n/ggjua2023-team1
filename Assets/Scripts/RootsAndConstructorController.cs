@@ -29,33 +29,41 @@ public class RootsAndConstructorController : MonoBehaviour
     {
         OutlineOn();
 
-        if (Vector3.Distance(transform.position, player.transform.position) < player.distanceToObject)
+        if (Vector3.Distance(this.transform.position, player.transform.position) < player.distanceToObject)
         {
-            if (this.gameObject.CompareTag("Root"))
+            HintButton.text = ChangeText();
+            if (!HintButton.isActiveAndEnabled)
             {
-                HintButton.text = "Press E\nto pick up root";
-            }
-            if (this.gameObject.CompareTag("Constructor") 
-                || this.gameObject.CompareTag("BlessingAltar"))
-            {
-                HintButton.text = "Press F\nto create a puppet";
-            }
-            if (this.gameObject.CompareTag("GiftAltar"))
-            {
-                HintButton.text = "Press F\nto gift a puppet";
+                HintButton.gameObject.SetActive(true);
             }
 
             PickUpRoot();
-
             InteractionWithAltar();
-
             GiftToTree();
 
-            HintButton.gameObject.SetActive(true);
         } else
         {
             HintButton.gameObject.SetActive(false);
         }
+    }
+
+    private string ChangeText()
+    {
+        if (this.gameObject.CompareTag("Root"))
+        {
+            return "Press E\nto pick up root";
+        }
+        if (this.gameObject.CompareTag("Constructor")
+            || this.gameObject.CompareTag("BlessingAltar"))
+        {
+            return "Press F\nto create a puppet";
+        }
+        if (this.gameObject.CompareTag("GiftAltar"))
+        {
+            return "Press F\nto gift a puppet";
+        }
+        
+        return string.Empty;
     }
 
     private void PickUpRoot()
@@ -79,7 +87,7 @@ public class RootsAndConstructorController : MonoBehaviour
                     Instantiate(craftMiniGame, canvas.transform);
                 }
             }
-            else if (this.gameObject.CompareTag("BlessingAltar"))
+            if (this.gameObject.CompareTag("BlessingAltar"))
             {
                 if (player.countOfPuppet > 0)
                 {

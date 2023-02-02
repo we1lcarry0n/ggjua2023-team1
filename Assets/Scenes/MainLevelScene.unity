@@ -1326,6 +1326,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4dcc6cfc0eae1d74591b6b6cf2e0f665, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  HintButton: {fileID: 1005900123}
   craftMiniGame: {fileID: 1289187889516368813, guid: 29177b6e72cc1c9468fb3db460232490, type: 3}
   blessMiniGame: {fileID: 2734509445196385002, guid: 959f1963c656ab749bf5b7f5d3e0d925, type: 3}
   hateBar: {fileID: 0}
@@ -2944,6 +2945,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4dcc6cfc0eae1d74591b6b6cf2e0f665, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  HintButton: {fileID: 1005900123}
   craftMiniGame: {fileID: 0}
   blessMiniGame: {fileID: 0}
   hateBar: {fileID: 0}
@@ -3966,6 +3968,10 @@ PrefabInstance:
       propertyPath: player
       value: 
       objectReference: {fileID: 614833753}
+    - target: {fileID: 3686321848836563839, guid: ebb968489d0de7a4da8104a144a6e934, type: 3}
+      propertyPath: HintButton
+      value: 
+      objectReference: {fileID: 1005900123}
     - target: {fileID: 4051317900708249418, guid: ebb968489d0de7a4da8104a144a6e934, type: 3}
       propertyPath: m_Name
       value: RootPrefab
@@ -4862,7 +4868,7 @@ GameObject:
   - component: {fileID: 1005900124}
   - component: {fileID: 1005900123}
   m_Layer: 5
-  m_Name: TapButton
+  m_Name: HintButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -8148,6 +8154,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4dcc6cfc0eae1d74591b6b6cf2e0f665, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  HintButton: {fileID: 1005900123}
   craftMiniGame: {fileID: 1289187889516368813, guid: 29177b6e72cc1c9468fb3db460232490, type: 3}
   blessMiniGame: {fileID: 2734509445196385002, guid: 959f1963c656ab749bf5b7f5d3e0d925, type: 3}
   hateBar: {fileID: 0}
@@ -8836,6 +8843,10 @@ PrefabInstance:
     - target: {fileID: 100000, guid: 72c76c06f54ca2e4aadfb83286408b54, type: 3}
       propertyPath: m_Name
       value: SM_Rock_03
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 72c76c06f54ca2e4aadfb83286408b54, type: 3}
+      propertyPath: m_TagString
+      value: Untagged
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 72c76c06f54ca2e4aadfb83286408b54, type: 3}
       propertyPath: m_RootOrder
