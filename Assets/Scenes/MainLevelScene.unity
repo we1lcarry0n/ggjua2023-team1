@@ -1843,7 +1843,7 @@ Light:
   serializedVersion: 10
   m_Type: 1
   m_Shape: 0
-  m_Color: {r: 0.29803923, g: 0.40392157, b: 0.6509434, a: 1}
+  m_Color: {r: 0.21441795, g: 0.22402278, b: 0.3584906, a: 1}
   m_Intensity: 1
   m_Range: 10
   m_SpotAngle: 30
@@ -2127,10 +2127,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 2832156880833351248, guid: 4efe4c6cfc0820240ae470369b1061fc, type: 3}
-      propertyPath: baseSpeed
-      value: 4
-      objectReference: {fileID: 0}
     - target: {fileID: 2832156880833351250, guid: 4efe4c6cfc0820240ae470369b1061fc, type: 3}
       propertyPath: m_Name
       value: Player
@@ -2180,10 +2176,6 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2832156880833351258, guid: 4efe4c6cfc0820240ae470369b1061fc, type: 3}
-      propertyPath: countOfPuppet
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2832156880833351258, guid: 4efe4c6cfc0820240ae470369b1061fc, type: 3}
       propertyPath: textCountOfRoots
       value: 
       objectReference: {fileID: 1428372490}
@@ -2195,48 +2187,11 @@ PrefabInstance:
       propertyPath: textCountOfUpPuppets
       value: 
       objectReference: {fileID: 2121023283}
-    - target: {fileID: 2832156880833351259, guid: 4efe4c6cfc0820240ae470369b1061fc, type: 3}
-      propertyPath: m_Speed
-      value: 10
-      objectReference: {fileID: 0}
-    - target: {fileID: 2832156880833351259, guid: 4efe4c6cfc0820240ae470369b1061fc, type: 3}
-      propertyPath: m_Radius
-      value: 0.35
-      objectReference: {fileID: 0}
-    - target: {fileID: 2832156880833351259, guid: 4efe4c6cfc0820240ae470369b1061fc, type: 3}
-      propertyPath: m_Enabled
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 2832156880833351260, guid: 4efe4c6cfc0820240ae470369b1061fc, type: 3}
-      propertyPath: m_Enabled
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 2832156880833351261, guid: 4efe4c6cfc0820240ae470369b1061fc, type: 3}
       propertyPath: camera
       value: 
       objectReference: {fileID: 230373753}
-    - target: {fileID: 2832156880833351261, guid: 4efe4c6cfc0820240ae470369b1061fc, type: 3}
-      propertyPath: upwardOffset
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 2832156880833351261, guid: 4efe4c6cfc0820240ae470369b1061fc, type: 3}
-      propertyPath: forwardOffset
-      value: 4
-      objectReference: {fileID: 0}
-    - target: {fileID: 2832156880833351262, guid: 4efe4c6cfc0820240ae470369b1061fc, type: 3}
-      propertyPath: m_Height
-      value: 1.9334219
-      objectReference: {fileID: 0}
-    - target: {fileID: 2832156880833351262, guid: 4efe4c6cfc0820240ae470369b1061fc, type: 3}
-      propertyPath: m_Enabled
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 2832156880833351262, guid: 4efe4c6cfc0820240ae470369b1061fc, type: 3}
-      propertyPath: m_Center.y
-      value: 1.0309654
-      objectReference: {fileID: 0}
-    m_RemovedComponents:
-    - {fileID: 2832156880833351260, guid: 4efe4c6cfc0820240ae470369b1061fc, type: 3}
+    m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4efe4c6cfc0820240ae470369b1061fc, type: 3}
 --- !u!1001 &552124950
 PrefabInstance:
@@ -4826,6 +4781,10 @@ MonoBehaviour:
   clockSlider: {fileID: 1187876147}
   timeOfClock: {fileID: 92728326}
   clockMax: 600
+  globalLight: {fileID: 514023313}
+  colorToMix:
+    serializedVersion: 2
+    rgba: 4278321666
 --- !u!1 &1187876145
 GameObject:
   m_ObjectHideFlags: 0

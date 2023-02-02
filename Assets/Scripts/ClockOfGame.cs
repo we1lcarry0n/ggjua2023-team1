@@ -12,8 +12,12 @@ public class ClockOfGame : MonoBehaviour
 
     private float minute;
     private float hour;
+    private float colorMinute;
 
     private bool isPlay;
+
+    [SerializeField] private Light globalLight;
+    [SerializeField] private Color32 colorToMix;
 
     void Start()
     {
@@ -38,11 +42,19 @@ public class ClockOfGame : MonoBehaviour
         {
             clockSlider.value -= Time.deltaTime;
             minute += Time.deltaTime;
+            colorMinute += Time.deltaTime;
 
             if (minute >= 60)
             {
                 minute = 0;
                 hour++;
+                AdjustColor();
+            }
+
+            if (colorMinute >= 30)
+            {
+                colorMinute = 0;
+                AdjustColor();
             }
 
             if (minute >= 9.5f)
@@ -59,5 +71,10 @@ public class ClockOfGame : MonoBehaviour
         {
             Debug.Log("The night is over");
         }
+    }
+
+    private void AdjustColor()
+    {
+        globalLight.color += colorToMix;
     }
 }
