@@ -35,7 +35,7 @@ public class HardMiniGame : MonoBehaviour
     void Start()
     {
         StartCoroutine(StartMiniGame());
-        player = GameObject.Find("Player").GetComponent<PlayerItemStats>();
+        player = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerItemStats>();
     }
 
     // Update is called once per frame
