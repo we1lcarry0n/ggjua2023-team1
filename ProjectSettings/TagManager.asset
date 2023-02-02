@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Items
   - Constructor
+  - Root
   layers:
   - Default
   - TransparentFX

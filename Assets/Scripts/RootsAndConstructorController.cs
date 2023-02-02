@@ -12,9 +12,10 @@ public class RootsAndConstructorController : MonoBehaviour
         if (Vector3.Distance(transform.position,
             player.transform.position) < player.distanceToObject)
         {
-            if (Input.GetKey(KeyCode.E) && this.gameObject.CompareTag("Root"))
+            if (Input.GetKey(KeyCode.E) && this.gameObject.CompareTag("Root") && player.countOfRoots == 1)
             {
                 player.countOfRoots++;
+                this.gameObject.GetComponentInParent<SpawnRoots>().ChangePosition();
                 Destroy(this.gameObject);
             }
 
