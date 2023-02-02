@@ -690,14 +690,14 @@ MonoBehaviour:
   reactionCountSlider: {fileID: 2641749369493690270}
   pointerContainer: {fileID: 2641749371029292339}
   reactionBar: {fileID: 2641749369373424898}
-  repeatTab: {fileID: 0}
-  winningTab: {fileID: 0}
-  miniGameBox: {fileID: 0}
+  repeatTab: {fileID: 6900834353718666273}
+  winningTab: {fileID: 2734509445234843858}
+  miniGameBox: {fileID: 2734509445196385002}
   reactionCount: 15
   reactionLength: 60
   pointerSpeed: 1
   isPoludnitsa: 0
-  isCraft: 1
+  isBless: 1
 --- !u!1 &2641749371029292338
 GameObject:
   m_ObjectHideFlags: 0
