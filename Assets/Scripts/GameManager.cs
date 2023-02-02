@@ -6,24 +6,31 @@ public class GameManager : MonoBehaviour
 {
     public GameObject poludnitsa;
     public GameObject player;
+    private PlayerItemStats playerStats;
 
     public Vector3 offsetSpawnPoludnitsa = new(0,0,10);
-    // Start is called before the first frame update
+
+    private bool isSpawnSpirit;
     void Start()
     {
-        //PoludnitsaLife();
+        playerStats = player.GetComponent<PlayerItemStats>();
     }
 
-    // Update is called once per frame
     void Update()
     {
-        
+        if (playerStats.countOfUpgratedPuppet == 1 && !isSpawnSpirit)
+        {
+            Instantiate(poludnitsa);
+            PoludnitsaLife();
+            isSpawnSpirit = true;
+        }else if (playerStats.countOfUpgratedPuppet == 0)
+        {
+            isSpawnSpirit = false;
+        }
     }
 
     private void PoludnitsaLife()
     {
-        Instantiate(poludnitsa);
         poludnitsa.transform.position = player.transform.position + offsetSpawnPoludnitsa;
-        //Vector3 spawnPos = player.transform.position + offsetSpawnPoludnitsa;
     }
 }

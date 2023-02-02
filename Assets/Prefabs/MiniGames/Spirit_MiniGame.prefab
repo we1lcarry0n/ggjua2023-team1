@@ -223,7 +223,7 @@ RectTransform:
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 1, y: 1}
+  m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -336,7 +336,7 @@ RectTransform:
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 1, y: 1}
+  m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: -0.000030517578, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -533,7 +533,7 @@ MonoBehaviour:
     m_PressedTrigger: Pressed
     m_SelectedTrigger: Selected
     m_DisabledTrigger: Disabled
-  m_Interactable: 1
+  m_Interactable: 0
   m_TargetGraphic: {fileID: 0}
   m_FillRect: {fileID: 7331015554118310930}
   m_HandleRect: {fileID: 0}
@@ -736,7 +736,7 @@ MonoBehaviour:
     m_PressedTrigger: Pressed
     m_SelectedTrigger: Selected
     m_DisabledTrigger: Disabled
-  m_Interactable: 1
+  m_Interactable: 0
   m_TargetGraphic: {fileID: 0}
   m_FillRect: {fileID: 7331015554385727377}
   m_HandleRect: {fileID: 0}
@@ -806,10 +806,11 @@ MonoBehaviour:
   repeatTab: {fileID: 8719156709564224306}
   winningTab: {fileID: 1873307708058335576}
   miniGameBox: {fileID: 1873307706487771286}
-  reactionCount: 15
+  reactionCount: 10
   reactionLength: 60
-  pointerSpeed: 1
+  pointerSpeed: 1.2
   isPoludnitsa: 1
+  isBless: 0
 --- !u!1 &7331015555685592729
 GameObject:
   m_ObjectHideFlags: 0

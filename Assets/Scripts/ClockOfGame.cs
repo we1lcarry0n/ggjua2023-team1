@@ -41,7 +41,7 @@ public class ClockOfGame : MonoBehaviour
         if (isPlay)
         {
             clockSlider.value -= Time.deltaTime;
-            minute += Time.deltaTime;
+            minute += Time.deltaTime * 0.7f;
             colorMinute += Time.deltaTime;
 
             if (minute >= 60)

@@ -9,27 +9,31 @@ public class PoludnitsaControl : MonoBehaviour
     private GameObject canvas;
     public float speed;
 
-    private Rigidbody enemyRb;
+    private PlayerItemStats playerStats;
+
     // Start is called before the first frame update
     void Start()
     {
-        enemyRb = GetComponent<Rigidbody>();
         canvas = GameObject.Find("Canvas");
         player = FindObjectOfType<Player>().gameObject;
+        playerStats = player.GetComponent<PlayerItemStats>();
         Destroy(gameObject, 10f);
     }
 
     // Update is called once per frame
     void FixedUpdate()
     {
-        Vector3 lookDirection = (player.transform.position - transform.position).normalized;
+        transform.position = Vector3.MoveTowards(transform.position, player.transform.position, speed);
 
-        enemyRb.AddForce(lookDirection * speed);
+        if (playerStats.countOfUpgratedPuppet == 0)
+        {
+            Destroy(gameObject);
+        }
     }
 
-    private void OnCollisionEnter(Collision collision)
+    private void OnTriggerEnter(Collider other)
     {
-        if (collision.gameObject.CompareTag("Player"))
+        if (other.gameObject.CompareTag("Player"))
         {
             Instantiate(spiritMiniGame, canvas.transform);
             Destroy(gameObject);
