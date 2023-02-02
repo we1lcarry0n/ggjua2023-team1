@@ -9,35 +9,45 @@ public class SpawnRoots : MonoBehaviour
     public GameObject rootToSpawn;
 
     public int currentPoint;
+    public int newPoint;
     public Vector3 currentPosition;
 
     private void Start()
     {
-        currentPoint = Random.Range(0, 4);
+        currentPoint = Random.Range(0, 5);
+        newPoint = Random.Range(0, 5);
         SpawnRootOnPoint();
     }
-    private void Update()
+
+    public void ChangePosition()
     {
-        while (!rootControllers[currentPoint].isFree)
+        while (newPoint == currentPoint)
         {
-            currentPoint = Random.Range(0, 4);
-            Debug.Log(currentPoint);
+            newPoint = Random.Range(0, 5);
         }
 
-        //SpawnTime();
+        currentPoint = newPoint;
         SpawnRootOnPoint();
     }
 
     private void SpawnRootOnPoint()
     {
         currentPosition = rootControllers[currentPoint].transform.position;
-        Instantiate(rootToSpawn, currentPosition, Quaternion.identity);
-        rootControllers[currentPoint].isFree = false;
+        Instantiate(rootToSpawn, currentPosition, Quaternion.identity, this.gameObject.transform);
     }
 
     private IEnumerator SpawnTime()
     {
-        yield return new WaitForSeconds(0.5f);
+        yield return new WaitForSeconds(10);
+
+        if (!rootControllers[currentPoint].isFree)
+        {
+            currentPoint = Random.Range(0, 5);
+        }
+        else
+        {
+            SpawnRootOnPoint();
+        }
     }
 
 
