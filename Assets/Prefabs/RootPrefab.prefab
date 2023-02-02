@@ -45,7 +45,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4dcc6cfc0eae1d74591b6b6cf2e0f665, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 0}
+  playerPrefab: {fileID: 2832156880833351250, guid: 4efe4c6cfc0820240ae470369b1061fc, type: 3}
 --- !u!1001 &839606711898688150
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -120,7 +120,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4dcc6cfc0eae1d74591b6b6cf2e0f665, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 0}
+  playerPrefab: {fileID: 0}
 --- !u!4 &877173498953084285 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 7e99dea08eff4c34b83372c88f7a621e, type: 3}

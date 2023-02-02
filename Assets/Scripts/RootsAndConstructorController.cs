@@ -7,12 +7,17 @@ public class RootsAndConstructorController : MonoBehaviour
 {
     public PlayerItemStats player;
 
+    private void Start()
+    {
+        player = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerItemStats>();    
+    }
+
     void Update()
     {
         if (Vector3.Distance(transform.position,
             player.transform.position) < player.distanceToObject)
         {
-            if (Input.GetKey(KeyCode.E) && this.gameObject.CompareTag("Root") && player.countOfRoots == 1)
+            if (Input.GetKey(KeyCode.E) && this.gameObject.CompareTag("Root") && player.countOfRoots == 0)
             {
                 player.countOfRoots++;
                 this.gameObject.GetComponentInParent<SpawnRoots>().ChangePosition();
