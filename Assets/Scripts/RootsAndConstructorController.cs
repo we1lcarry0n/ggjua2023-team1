@@ -112,6 +112,13 @@ public class RootsAndConstructorController : MonoBehaviour
                 if (player.countOfPuppet > 0)
                 {
                     player.countOfPuppet--;
+                    hateBar.value -= 10f;
+                }
+
+                if (player.countOfUpgratedPuppet > 0)
+                {
+                    player.countOfUpgratedPuppet--;
+                    hateBar.value -= 20f;
                 }
             }
         }

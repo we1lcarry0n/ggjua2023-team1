@@ -806,9 +806,9 @@ MonoBehaviour:
   repeatTab: {fileID: 8719156709564224306}
   winningTab: {fileID: 1873307708058335576}
   miniGameBox: {fileID: 1873307706487771286}
-  reactionCount: 15
+  reactionCount: 10
   reactionLength: 60
-  pointerSpeed: 1
+  pointerSpeed: 1.2
   isPoludnitsa: 1
   isBless: 0
 --- !u!1 &7331015555685592729
