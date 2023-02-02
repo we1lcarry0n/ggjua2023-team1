@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.029468806, g: 0.03908555, b: 0.0479649, a: 1}
+  m_IndirectSpecularColor: {r: 0.0295824, g: 0.03918161, b: 0.048119105, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -140,7 +140,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4366422001192058, guid: 30082ab235864f646add22eb6cdc11a3, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 2.7428894
+      value: 0.52
       objectReference: {fileID: 0}
     - target: {fileID: 4366422001192058, guid: 30082ab235864f646add22eb6cdc11a3, type: 3}
       propertyPath: m_LocalPosition.y
@@ -148,7 +148,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4366422001192058, guid: 30082ab235864f646add22eb6cdc11a3, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 1.0508404
+      value: 0.05
       objectReference: {fileID: 0}
     - target: {fileID: 4366422001192058, guid: 30082ab235864f646add22eb6cdc11a3, type: 3}
       propertyPath: m_LocalRotation.w
@@ -280,7 +280,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4704772494426858, guid: d68870cf1b8968f49b16b4eaebdce109, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 1.7058868
+      value: -0.5169983
       objectReference: {fileID: 0}
     - target: {fileID: 4704772494426858, guid: d68870cf1b8968f49b16b4eaebdce109, type: 3}
       propertyPath: m_LocalPosition.y
@@ -288,7 +288,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4704772494426858, guid: d68870cf1b8968f49b16b4eaebdce109, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -0.46615982
+      value: -1.467001
       objectReference: {fileID: 0}
     - target: {fileID: 4704772494426858, guid: d68870cf1b8968f49b16b4eaebdce109, type: 3}
       propertyPath: m_LocalRotation.w
@@ -1269,7 +1269,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4873930994829618, guid: 9449f30b8830bf34395a4e029ca9e65d, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 3.350891
+      value: 1.128006
       objectReference: {fileID: 0}
     - target: {fileID: 4873930994829618, guid: 9449f30b8830bf34395a4e029ca9e65d, type: 3}
       propertyPath: m_LocalPosition.y
@@ -1277,7 +1277,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4873930994829618, guid: 9449f30b8830bf34395a4e029ca9e65d, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 2.4598408
+      value: 1.4589996
       objectReference: {fileID: 0}
     - target: {fileID: 4873930994829618, guid: 9449f30b8830bf34395a4e029ca9e65d, type: 3}
       propertyPath: m_LocalRotation.w
@@ -1309,49 +1309,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9449f30b8830bf34395a4e029ca9e65d, type: 3}
---- !u!1 &233400613 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 1087713860155376, guid: 9449f30b8830bf34395a4e029ca9e65d, type: 3}
-  m_PrefabInstance: {fileID: 233400612}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &233400614
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 233400613}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4dcc6cfc0eae1d74591b6b6cf2e0f665, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  craftMiniGame: {fileID: 1289187889516368813, guid: 29177b6e72cc1c9468fb3db460232490, type: 3}
-  blessMiniGame: {fileID: 2734509445196385002, guid: 959f1963c656ab749bf5b7f5d3e0d925, type: 3}
-  hateBar: {fileID: 0}
 --- !u!4 &233400615 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4873930994829618, guid: 9449f30b8830bf34395a4e029ca9e65d, type: 3}
   m_PrefabInstance: {fileID: 233400612}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &233400619
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 233400613}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5fea29bb7c508c244a1f805a5fd3fc4d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  outlineMode: 0
-  outlineColor: {r: 1, g: 1, b: 1, a: 1}
-  outlineWidth: 2
-  precomputeOutline: 0
-  bakeKeys: []
-  bakeValues: []
 --- !u!1 &263318311
 GameObject:
   m_ObjectHideFlags: 0
@@ -2121,9 +2083,11 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 474556281}
+  - component: {fileID: 474556283}
+  - component: {fileID: 474556282}
   m_Layer: 0
   m_Name: Altair Spot
-  m_TagString: Untagged
+  m_TagString: BlessingAltar
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2152,6 +2116,40 @@ Transform:
   m_Father: {fileID: 674037038}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &474556282
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 474556280}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5fea29bb7c508c244a1f805a5fd3fc4d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  outlineMode: 0
+  outlineColor: {r: 1, g: 1, b: 1, a: 1}
+  outlineWidth: 0
+  precomputeOutline: 0
+  bakeKeys: []
+  bakeValues: []
+--- !u!114 &474556283
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 474556280}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4dcc6cfc0eae1d74591b6b6cf2e0f665, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  HintButton: {fileID: 1005900123}
+  craftMiniGame: {fileID: 1289187889516368813, guid: 29177b6e72cc1c9468fb3db460232490, type: 3}
+  blessMiniGame: {fileID: 2734509445196385002, guid: 959f1963c656ab749bf5b7f5d3e0d925, type: 3}
+  hateBar: {fileID: 0}
 --- !u!1 &485222624
 GameObject:
   m_ObjectHideFlags: 0
@@ -2904,49 +2902,11 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4064670380806372, guid: bb290a0b717f64745a51c2cb09e3f113, type: 3}
   m_PrefabInstance: {fileID: 569072299}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &580132563 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 100000, guid: 72c76c06f54ca2e4aadfb83286408b54, type: 3}
-  m_PrefabInstance: {fileID: 2088149847}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &580132564 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 400000, guid: 72c76c06f54ca2e4aadfb83286408b54, type: 3}
   m_PrefabInstance: {fileID: 2088149847}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &580132565
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 580132563}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5fea29bb7c508c244a1f805a5fd3fc4d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  outlineMode: 0
-  outlineColor: {r: 1, g: 1, b: 1, a: 1}
-  outlineWidth: 0
-  precomputeOutline: 0
-  bakeKeys: []
-  bakeValues: []
---- !u!114 &580132566
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 580132563}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4dcc6cfc0eae1d74591b6b6cf2e0f665, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  craftMiniGame: {fileID: 0}
-  blessMiniGame: {fileID: 0}
-  hateBar: {fileID: 0}
 --- !u!1001 &580851703
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3966,6 +3926,10 @@ PrefabInstance:
       propertyPath: player
       value: 
       objectReference: {fileID: 614833753}
+    - target: {fileID: 3686321848836563839, guid: ebb968489d0de7a4da8104a144a6e934, type: 3}
+      propertyPath: HintButton
+      value: 
+      objectReference: {fileID: 1005900123}
     - target: {fileID: 4051317900708249418, guid: ebb968489d0de7a4da8104a144a6e934, type: 3}
       propertyPath: m_Name
       value: RootPrefab
@@ -4335,11 +4299,6 @@ PrefabInstance:
 Transform:
   m_CorrespondingSourceObject: {fileID: 4064670380806372, guid: bb290a0b717f64745a51c2cb09e3f113, type: 3}
   m_PrefabInstance: {fileID: 888018849}
-  m_PrefabAsset: {fileID: 0}
---- !u!1 &896611458 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 1663513170406406, guid: f64f4b0df449d454e85736dfccdbb72a, type: 3}
-  m_PrefabInstance: {fileID: 1885411553}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &907295785
 PrefabInstance:
@@ -6408,7 +6367,7 @@ RectTransform:
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 0.000030517578, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -6958,7 +6917,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4585559402303324, guid: 1fbdd99ef1d1e2b4dac24a8d8ef04741, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 1.5349731
+      value: -0.687912
       objectReference: {fileID: 0}
     - target: {fileID: 4585559402303324, guid: 1fbdd99ef1d1e2b4dac24a8d8ef04741, type: 3}
       propertyPath: m_LocalPosition.y
@@ -6966,7 +6925,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4585559402303324, guid: 1fbdd99ef1d1e2b4dac24a8d8ef04741, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0.9464359
+      value: -0.054405212
       objectReference: {fileID: 0}
     - target: {fileID: 4585559402303324, guid: 1fbdd99ef1d1e2b4dac24a8d8ef04741, type: 3}
       propertyPath: m_LocalRotation.w
@@ -7069,9 +7028,11 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1590997709}
+  - component: {fileID: 1590997711}
+  - component: {fileID: 1590997710}
   m_Layer: 0
   m_Name: CraftingSpot
-  m_TagString: Untagged
+  m_TagString: Constructor
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -7084,7 +7045,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1590997708}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -162.50089, y: -0.5524645, z: -19.389841}
+  m_LocalPosition: {x: -160.34, y: -0.5524645, z: -18.21}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -7095,6 +7056,40 @@ Transform:
   m_Father: {fileID: 674037038}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1590997710
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1590997708}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5fea29bb7c508c244a1f805a5fd3fc4d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  outlineMode: 0
+  outlineColor: {r: 1, g: 1, b: 1, a: 1}
+  outlineWidth: 2
+  precomputeOutline: 0
+  bakeKeys: []
+  bakeValues: []
+--- !u!114 &1590997711
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1590997708}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4dcc6cfc0eae1d74591b6b6cf2e0f665, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  HintButton: {fileID: 1005900123}
+  craftMiniGame: {fileID: 1289187889516368813, guid: 29177b6e72cc1c9468fb3db460232490, type: 3}
+  blessMiniGame: {fileID: 2734509445196385002, guid: 959f1963c656ab749bf5b7f5d3e0d925, type: 3}
+  hateBar: {fileID: 0}
 --- !u!4 &1601309152 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4556773208972270, guid: 5d5da19b06b71d74baef1d8c22f634e1, type: 3}
@@ -7292,7 +7287,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1706165067
 RectTransform:
   m_ObjectHideFlags: 0
@@ -7601,7 +7596,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 418.55792, y: 52.02777}
+  m_AnchoredPosition: {x: 418.55786, y: 52.027832}
   m_SizeDelta: {x: 761.1158, y: 24.0555}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1780934117
@@ -8066,7 +8061,8 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 95187613768168274, guid: f64f4b0df449d454e85736dfccdbb72a, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: f64f4b0df449d454e85736dfccdbb72a, type: 3}
 --- !u!1 &1885925372
 GameObject:
@@ -8108,6 +8104,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1892318969}
+  - component: {fileID: 1892318971}
+  - component: {fileID: 1892318970}
   m_Layer: 0
   m_Name: GiftSpot
   m_TagString: GiftAltar
@@ -8131,33 +8129,29 @@ Transform:
   m_Father: {fileID: 674037038}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!4 &1892887242 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 4308599782211030, guid: f64f4b0df449d454e85736dfccdbb72a, type: 3}
-  m_PrefabInstance: {fileID: 1885411553}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &1892887243
+--- !u!114 &1892318970
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 896611458}
+  m_GameObject: {fileID: 1892318968}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 4dcc6cfc0eae1d74591b6b6cf2e0f665, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  craftMiniGame: {fileID: 1289187889516368813, guid: 29177b6e72cc1c9468fb3db460232490, type: 3}
-  blessMiniGame: {fileID: 2734509445196385002, guid: 959f1963c656ab749bf5b7f5d3e0d925, type: 3}
-  hateBar: {fileID: 0}
---- !u!114 &1892887248
+  HintButton: {fileID: 1005900123}
+  craftMiniGame: {fileID: 0}
+  blessMiniGame: {fileID: 0}
+  hateBar: {fileID: 639648340}
+--- !u!114 &1892318971
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 896611458}
+  m_GameObject: {fileID: 1892318968}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5fea29bb7c508c244a1f805a5fd3fc4d, type: 3}
@@ -8169,6 +8163,11 @@ MonoBehaviour:
   precomputeOutline: 0
   bakeKeys: []
   bakeValues: []
+--- !u!4 &1892887242 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 4308599782211030, guid: f64f4b0df449d454e85736dfccdbb72a, type: 3}
+  m_PrefabInstance: {fileID: 1885411553}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &1898666208 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4556773208972270, guid: 5d5da19b06b71d74baef1d8c22f634e1, type: 3}
