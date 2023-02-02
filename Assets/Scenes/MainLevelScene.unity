@@ -1843,7 +1843,7 @@ Light:
   serializedVersion: 10
   m_Type: 1
   m_Shape: 0
-  m_Color: {r: 0.40790316, g: 0.43659166, b: 0.6415094, a: 1}
+  m_Color: {r: 0.29803923, g: 0.40392157, b: 0.6509434, a: 1}
   m_Intensity: 1
   m_Range: 10
   m_SpotAngle: 30
@@ -1876,7 +1876,7 @@ Light:
       e33: 1
     m_UseCullingMatrixOverride: 0
   m_Cookie: {fileID: 0}
-  m_DrawHalo: 0
+  m_DrawHalo: 1
   m_Flare: {fileID: 0}
   m_RenderMode: 0
   m_CullingMask:
@@ -2215,6 +2215,10 @@ PrefabInstance:
       propertyPath: camera
       value: 
       objectReference: {fileID: 230373753}
+    - target: {fileID: 2832156880833351261, guid: 4efe4c6cfc0820240ae470369b1061fc, type: 3}
+      propertyPath: upwardOffset
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 2832156880833351261, guid: 4efe4c6cfc0820240ae470369b1061fc, type: 3}
       propertyPath: forwardOffset
       value: 4
@@ -7709,7 +7713,7 @@ NavMeshObstacle:
   m_Enabled: 1
   serializedVersion: 3
   m_Shape: 1
-  m_Extents: {x: 2.5, y: 0, z: 2.5}
+  m_Extents: {x: 2.5, y: 0.00001, z: 2.5}
   m_MoveThreshold: 0.1
   m_Carve: 0
   m_CarveOnlyStationary: 1
