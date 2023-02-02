@@ -8,18 +8,16 @@ public class Player : MonoBehaviour
 {
     public float baseSpeed;
     public float rotationSpeed;
-    public float force;
     public float sprint;
-    public float gravity;
 
     private Vector3 movementDirection;
 
     [SerializeField] private Animator animator;
-    private CharacterController chc;
+    private NavMeshAgent nma;
 
     private void Start()
     {
-        chc = GetComponent<CharacterController>();
+        nma = GetComponent<NavMeshAgent>();
     }
 
     private void Update()
@@ -29,31 +27,12 @@ public class Player : MonoBehaviour
 
         movementDirection = Vector3.zero;
         movementDirection = x * Vector3.right + z * Vector3.forward;
-        movementDirection.Normalize();
 
-        ApplyGravity();
         AdjustAnimation();
-
-        if (Input.GetKeyDown(KeyCode.Q))
-        {
-            //rb.AddForce(transform.forward * force, ForceMode.Impulse);
-        }
 
         float speed = Input.GetKey(KeyCode.LeftShift) ? baseSpeed*sprint : baseSpeed;
 
-        chc.Move(movementDirection * speed * Time.deltaTime);
-    }
-
-    private void ApplyGravity()
-    {
-        if (chc.isGrounded)
-        {
-            movementDirection.y = -gravity * .02f;
-        }
-        else
-        {
-            movementDirection.y = - gravity * Time.deltaTime;
-        }
+        nma.Move(movementDirection * Time.deltaTime * speed);
     }
 
     private void AdjustAnimation()

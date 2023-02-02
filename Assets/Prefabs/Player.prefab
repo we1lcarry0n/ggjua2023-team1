@@ -17,7 +17,7 @@ GameObject:
   - component: {fileID: 2832156880833351259}
   m_Layer: 0
   m_Name: Player
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -118,6 +118,9 @@ MonoBehaviour:
   countOfRoots: 0
   countOfPuppet: 0
   countOfUpgratedPuppet: 0
+  textCountOfRoots: {fileID: 0}
+  textCountOfPuppets: {fileID: 0}
+  textCountOfUpPuppets: {fileID: 0}
 --- !u!195 &2832156880833351259
 NavMeshAgent:
   m_ObjectHideFlags: 0
