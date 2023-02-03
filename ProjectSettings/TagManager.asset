@@ -9,6 +9,10 @@ TagManager:
   - Root
   - BlessingAltar
   - GiftAltar
+  - Heel
+  - Swamp
+  - Sand
+  - Forest
   layers:
   - Default
   - TransparentFX
