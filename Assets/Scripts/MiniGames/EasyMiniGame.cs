@@ -12,7 +12,7 @@ public class EasyMiniGame : MonoBehaviour
     public GameObject repeatTab;
     public GameObject winningTab;
     public GameObject miniGameBox;
-    private PlayerItemStats player;
+    private Player player;
 
     public int reactionCount;
 
@@ -30,6 +30,7 @@ public class EasyMiniGame : MonoBehaviour
 
     void Start()
     {
+        player = GameObject.FindGameObjectWithTag("Player").GetComponent<Player>();
         StartCoroutine(ShowMiniGame());
         StartCoroutine(StartMiniGame());
     }
@@ -118,6 +119,7 @@ public class EasyMiniGame : MonoBehaviour
         reactionBarAngle = 0;
         checkCount = 0;
         stopGame = true;
+        player.ApplySpeedDebuff();
         Debug.Log("You lose");
     }
 
@@ -126,6 +128,7 @@ public class EasyMiniGame : MonoBehaviour
         StartCoroutine(HideMiniGame());
         checkCount = 0;
         stopGame = true;
+        player.RegenerateStamina(100f);
         Debug.Log("You win");
         StartCoroutine(ShowWinningTable());
     }

@@ -106,4 +106,16 @@ public class Player : MonoBehaviour
         }
         staminaBar.fillAmount = currentStamina / maxStamina;
     }
+
+    private IEnumerator WispCollisionCoroutine()
+    {
+        baseSpeed *= .5f;
+        yield return new WaitForSeconds(5f);
+        baseSpeed *= 2f;
+    }
+
+    public void ApplySpeedDebuff()
+    {
+        StartCoroutine(WispCollisionCoroutine());
+    }
 }
