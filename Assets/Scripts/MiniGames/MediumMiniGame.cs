@@ -29,10 +29,14 @@ public class MediumMiniGame : MonoBehaviour
     public bool isMavka;
     public bool isCraft;
 
+    private AudioSource gameManager;
+    [SerializeField] private AudioClip pickUpItem;
+
     void Start()
     {
         StartCoroutine(StartMiniGame());
         player = GameObject.Find("Player").GetComponent<PlayerItemStats>();
+        gameManager = GameObject.FindGameObjectWithTag("GameController").GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -137,6 +141,8 @@ public class MediumMiniGame : MonoBehaviour
         {
             player.countOfRoots--;
             player.countOfPuppet++;
+            gameManager.clip = pickUpItem;
+            gameManager.Play();
         }
         checkCount = 0;
         stopGame = true;
