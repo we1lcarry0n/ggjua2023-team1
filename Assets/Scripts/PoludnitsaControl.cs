@@ -10,6 +10,8 @@ public class PoludnitsaControl : MonoBehaviour
     public float speed;
 
     private PlayerItemStats playerStats;
+    private AudioSource gameManager;
+    [SerializeField] private AudioClip deathCry;
 
     // Start is called before the first frame update
     void Start()
@@ -17,6 +19,8 @@ public class PoludnitsaControl : MonoBehaviour
         canvas = GameObject.Find("Canvas");
         player = FindObjectOfType<Player>().gameObject;
         playerStats = player.GetComponent<PlayerItemStats>();
+        gameManager = GameObject.FindGameObjectWithTag("GameController").GetComponent<AudioSource>();
+        Invoke("DeathCry", 9.9f);
         Destroy(gameObject, 10f);
     }
 
@@ -27,6 +31,7 @@ public class PoludnitsaControl : MonoBehaviour
 
         if (playerStats.countOfUpgratedPuppet == 0)
         {
+            DeathCry();
             Destroy(gameObject);
         }
     }
@@ -36,7 +41,14 @@ public class PoludnitsaControl : MonoBehaviour
         if (other.gameObject.CompareTag("Player"))
         {
             Instantiate(spiritMiniGame, canvas.transform);
+            DeathCry();
             Destroy(gameObject);
         }
+    }
+
+    private void DeathCry()
+    {
+        gameManager.clip = deathCry;
+        gameManager.Play();
     }
 }
