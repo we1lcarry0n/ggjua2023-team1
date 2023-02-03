@@ -32,10 +32,14 @@ public class HardMiniGame : MonoBehaviour
     public bool isPoludnitsa;
     public bool isBless;
 
+    private AudioSource gameManager;
+    [SerializeField] private AudioClip pickUpItem;
+
     void Start()
     {
         StartCoroutine(StartMiniGame());
         player = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerItemStats>();
+        gameManager = GameObject.FindGameObjectWithTag("GameController").GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -173,6 +177,8 @@ public class HardMiniGame : MonoBehaviour
         {
             player.countOfPuppet--;
             player.countOfUpgratedPuppet++;
+            gameManager.clip = pickUpItem;
+            gameManager.Play();
         }
         checkCount = 0;
         stopGame = true;

@@ -698,6 +698,7 @@ MonoBehaviour:
   pointerSpeed: 1
   isPoludnitsa: 0
   isBless: 1
+  pickUpItem: {fileID: 8300000, guid: 31a8f1b02c35c00499b92c5f35964fb1, type: 3}
 --- !u!1 &2641749371029292338
 GameObject:
   m_ObjectHideFlags: 0
