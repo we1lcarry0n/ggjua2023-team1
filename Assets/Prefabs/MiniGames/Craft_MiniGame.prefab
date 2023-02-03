@@ -549,7 +549,7 @@ MonoBehaviour:
     m_PressedTrigger: Pressed
     m_SelectedTrigger: Selected
     m_DisabledTrigger: Disabled
-  m_Interactable: 1
+  m_Interactable: 0
   m_TargetGraphic: {fileID: 0}
   m_FillRect: {fileID: 451204647645991520}
   m_HandleRect: {fileID: 0}
@@ -622,7 +622,7 @@ MonoBehaviour:
   miniGameBox: {fileID: 1289187889516368813}
   reactionCount: 5
   reactionLength: 60
-  pointerSpeed: 1
+  pointerSpeed: 1.5
   isMavka: 0
   isCraft: 1
 --- !u!1 &451204649154557961

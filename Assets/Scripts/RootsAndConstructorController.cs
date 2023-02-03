@@ -7,6 +7,7 @@ using TMPro;
 public class RootsAndConstructorController : MonoBehaviour
 {
     private PlayerItemStats player;
+    private bool isInterracted;
     private GameObject canvas;
     
     public TMP_Text HintButton;
@@ -28,42 +29,47 @@ public class RootsAndConstructorController : MonoBehaviour
     void Update()
     {
         OutlineOn();
+        
 
-        if (Vector3.Distance(this.transform.position, player.transform.position) < player.distanceToObject)
+        if (Vector3.Distance(transform.position, player.transform.position) < player.distanceToObject)
         {
-            HintButton.text = ChangeText();
-            if (!HintButton.isActiveAndEnabled)
+            
+
+            if (this.gameObject.CompareTag("Root"))
             {
-                HintButton.gameObject.SetActive(true);
+                HintButton.text = "Press E\nto pick up root";
+                isInterracted = true;
+            }
+            if (this.gameObject.CompareTag("Constructor") 
+                || this.gameObject.CompareTag("BlessingAltar"))
+            {
+                HintButton.text = "Press F\nto create a puppet";
+                isInterracted = true;
+            }
+            if (this.gameObject.CompareTag("GiftAltar"))
+            {
+                HintButton.text = "Press F\nto gift a puppet";
+                isInterracted = true;
             }
 
+            HintButton.gameObject.SetActive(true);
+
             PickUpRoot();
+
             InteractionWithAltar();
+
             GiftToTree();
 
-        } else
-        {
-            HintButton.gameObject.SetActive(false);
+            
         }
-    }
-
-    private string ChangeText()
-    {
-        if (this.gameObject.CompareTag("Root"))
+        else
         {
-            return "Press E\nto pick up root";
+            if (isInterracted)
+            {
+                HintButton.gameObject.SetActive(false);
+                isInterracted = false;
+            }
         }
-        if (this.gameObject.CompareTag("Constructor")
-            || this.gameObject.CompareTag("BlessingAltar"))
-        {
-            return "Press F\nto create a puppet";
-        }
-        if (this.gameObject.CompareTag("GiftAltar"))
-        {
-            return "Press F\nto gift a puppet";
-        }
-        
-        return string.Empty;
     }
 
     private void PickUpRoot()
@@ -87,7 +93,7 @@ public class RootsAndConstructorController : MonoBehaviour
                     Instantiate(craftMiniGame, canvas.transform);
                 }
             }
-            if (this.gameObject.CompareTag("BlessingAltar"))
+            else if (this.gameObject.CompareTag("BlessingAltar"))
             {
                 if (player.countOfPuppet > 0)
                 {
@@ -106,6 +112,13 @@ public class RootsAndConstructorController : MonoBehaviour
                 if (player.countOfPuppet > 0)
                 {
                     player.countOfPuppet--;
+                    hateBar.value -= 10f;
+                }
+
+                if (player.countOfUpgratedPuppet > 0)
+                {
+                    player.countOfUpgratedPuppet--;
+                    hateBar.value -= 20f;
                 }
             }
         }
