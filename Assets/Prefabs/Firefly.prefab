@@ -176,5 +176,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pointsContainer: {fileID: 0}
   points: []
+  fireFlyMiniGame: {fileID: 7051079722787210640, guid: f1a0f6182fda9e3478858e06bbf4c60d, type: 3}
   speed: 0.2
   curentPoint: 0
