@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5436372878285833814}
   - component: {fileID: 3686321848836563839}
+  - component: {fileID: 835374995}
   m_Layer: 0
   m_Name: RootPrefab
   m_TagString: Root
@@ -24,7 +25,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4051317900708249418}
-  m_LocalRotation: {x: -0, y: -0, z: -0.56396204, w: 0.8258007}
+  m_LocalRotation: {x: 0, y: 0, z: -0.5639585, w: 0.8258031}
   m_LocalPosition: {x: -3.37, y: 0.82, z: -5.04}
   m_LocalScale: {x: 0.03142124, y: 0.03142124, z: 0.03142124}
   m_ConstrainProportionsScale: 0
@@ -45,7 +46,29 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4dcc6cfc0eae1d74591b6b6cf2e0f665, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerPrefab: {fileID: 2832156880833351250, guid: 4efe4c6cfc0820240ae470369b1061fc, type: 3}
+  HintButton: {fileID: 0}
+  craftMiniGame: {fileID: 0}
+  blessMiniGame: {fileID: 0}
+  hateBar: {fileID: 0}
+  pickUpClip: {fileID: 8300000, guid: 31a8f1b02c35c00499b92c5f35964fb1, type: 3}
+--- !u!114 &835374995
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4051317900708249418}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5fea29bb7c508c244a1f805a5fd3fc4d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  outlineMode: 0
+  outlineColor: {r: 0.7075472, g: 0.54297453, b: 0.23028658, a: 1}
+  outlineWidth: 0
+  precomputeOutline: 0
+  bakeKeys: []
+  bakeValues: []
 --- !u!1001 &839606711898688150
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -103,24 +126,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7e99dea08eff4c34b83372c88f7a621e, type: 3}
---- !u!1 &533544660649146311 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 7e99dea08eff4c34b83372c88f7a621e, type: 3}
-  m_PrefabInstance: {fileID: 839606711898688150}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &1515649918189146659
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 533544660649146311}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4dcc6cfc0eae1d74591b6b6cf2e0f665, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  playerPrefab: {fileID: 0}
 --- !u!4 &877173498953084285 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 7e99dea08eff4c34b83372c88f7a621e, type: 3}

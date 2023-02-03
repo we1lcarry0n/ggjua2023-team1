@@ -6,16 +6,16 @@ public class Firefly : MonoBehaviour
 {
     public Transform pointsContainer;
     public List<Transform> points;
+    public GameObject fireFlyMiniGame;
 
     public float speed;
     public int curentPoint = 0;
 
-    private SpriteRenderer spriteRenderer;
-
     private Transform playerTransform;
+    private GameObject canvas;
     private void Start()
     {
-        spriteRenderer= GetComponent<SpriteRenderer>();
+        canvas = GameObject.Find("Canvas");
 
         for (int i = 0; i < pointsContainer.childCount; i++)
         {
@@ -54,11 +54,12 @@ public class Firefly : MonoBehaviour
         }
     }
 
-    private void OnTriggerExit(Collider collision)
+    private void OnCollisionEnter(Collision collision)
     {
         if (collision.gameObject.CompareTag("Player"))
         {
-            playerTransform = null;
+            Instantiate(fireFlyMiniGame, canvas.transform);
+            Destroy(gameObject);
         }
     }
 }

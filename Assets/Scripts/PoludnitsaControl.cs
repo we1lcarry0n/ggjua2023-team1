@@ -9,30 +9,46 @@ public class PoludnitsaControl : MonoBehaviour
     private GameObject canvas;
     public float speed;
 
-    private Rigidbody enemyRb;
+    private PlayerItemStats playerStats;
+    private AudioSource gameManager;
+    [SerializeField] private AudioClip deathCry;
+
     // Start is called before the first frame update
     void Start()
     {
-        enemyRb = GetComponent<Rigidbody>();
         canvas = GameObject.Find("Canvas");
         player = FindObjectOfType<Player>().gameObject;
+        playerStats = player.GetComponent<PlayerItemStats>();
+        gameManager = GameObject.FindGameObjectWithTag("GameController").GetComponent<AudioSource>();
+        Invoke("DeathCry", 9.9f);
         Destroy(gameObject, 10f);
     }
 
     // Update is called once per frame
     void FixedUpdate()
     {
-        Vector3 lookDirection = (player.transform.position - transform.position).normalized;
+        transform.position = Vector3.MoveTowards(transform.position, player.transform.position, speed);
 
-        enemyRb.AddForce(lookDirection * speed);
-    }
-
-    private void OnCollisionEnter(Collision collision)
-    {
-        if (collision.gameObject.CompareTag("Player"))
+        if (playerStats.countOfUpgratedPuppet == 0)
         {
-            Instantiate(spiritMiniGame, canvas.transform);
+            DeathCry();
             Destroy(gameObject);
         }
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject.CompareTag("Player"))
+        {
+            Instantiate(spiritMiniGame, canvas.transform);
+            DeathCry();
+            Destroy(gameObject);
+        }
+    }
+
+    private void DeathCry()
+    {
+        gameManager.clip = deathCry;
+        gameManager.Play();
     }
 }
