@@ -16,7 +16,7 @@ public class PlayerStepsController : MonoBehaviour
     {
         if(other.gameObject.tag == "Heel")
         {
-            Debug.Log("Step");
+            stepSound.pitch = Random.Range(.75f, 1.25f);
             stepSound.Play();
         }
     }
