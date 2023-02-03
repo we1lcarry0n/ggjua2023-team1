@@ -50,6 +50,8 @@ public class Player : MonoBehaviour
 
     private void AdjustAnimation()
     {
+        animator.Play(baseSpeed == 1.5 ? "Slowmotion" : "Locomotion");
+
         if (movementDirection.z == 0 && movementDirection.x == 0)
         {
             animator.SetFloat("Speed", 0, .1f, Time.deltaTime);
