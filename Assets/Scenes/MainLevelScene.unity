@@ -2748,6 +2748,7 @@ MonoBehaviour:
   craftMiniGame: {fileID: 1289187889516368813, guid: 29177b6e72cc1c9468fb3db460232490, type: 3}
   blessMiniGame: {fileID: 2734509445196385002, guid: 959f1963c656ab749bf5b7f5d3e0d925, type: 3}
   hateBar: {fileID: 0}
+  pickUpClip: {fileID: 8300000, guid: 31a8f1b02c35c00499b92c5f35964fb1, type: 3}
 --- !u!114 &474556284
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3497,17 +3498,6 @@ Transform:
   m_Father: {fileID: 424941927}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &614833753 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 2832156880833351258, guid: 4efe4c6cfc0820240ae470369b1061fc, type: 3}
-  m_PrefabInstance: {fileID: 549535466}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 472076489}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c785a9dd49619894996fd5b271f6ff67, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &621796063
 GameObject:
   m_ObjectHideFlags: 0
@@ -4619,14 +4609,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 30744541}
     m_Modifications:
-    - target: {fileID: 1515649918189146659, guid: ebb968489d0de7a4da8104a144a6e934, type: 3}
-      propertyPath: player
-      value: 
-      objectReference: {fileID: 614833753}
-    - target: {fileID: 3686321848836563839, guid: ebb968489d0de7a4da8104a144a6e934, type: 3}
-      propertyPath: player
-      value: 
-      objectReference: {fileID: 614833753}
     - target: {fileID: 3686321848836563839, guid: ebb968489d0de7a4da8104a144a6e934, type: 3}
       propertyPath: HintButton
       value: 
@@ -4679,8 +4661,7 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: -68.66
       objectReference: {fileID: 0}
-    m_RemovedComponents:
-    - {fileID: 1515649918189146659, guid: ebb968489d0de7a4da8104a144a6e934, type: 3}
+    m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ebb968489d0de7a4da8104a144a6e934, type: 3}
 --- !u!1 &816731473
 GameObject:
@@ -4912,24 +4893,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 5436372878285833814, guid: ebb968489d0de7a4da8104a144a6e934, type: 3}
   m_PrefabInstance: {fileID: 812732829}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &835374995
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 835374992}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5fea29bb7c508c244a1f805a5fd3fc4d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  outlineMode: 0
-  outlineColor: {r: 0.7075472, g: 0.54297453, b: 0.23028658, a: 1}
-  outlineWidth: 0
-  precomputeOutline: 0
-  bakeKeys: []
-  bakeValues: []
 --- !u!1 &845335818
 GameObject:
   m_ObjectHideFlags: 0
@@ -8173,6 +8136,7 @@ MonoBehaviour:
   craftMiniGame: {fileID: 1289187889516368813, guid: 29177b6e72cc1c9468fb3db460232490, type: 3}
   blessMiniGame: {fileID: 2734509445196385002, guid: 959f1963c656ab749bf5b7f5d3e0d925, type: 3}
   hateBar: {fileID: 0}
+  pickUpClip: {fileID: 8300000, guid: 31a8f1b02c35c00499b92c5f35964fb1, type: 3}
 --- !u!114 &1590997712
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9424,6 +9388,7 @@ MonoBehaviour:
   craftMiniGame: {fileID: 0}
   blessMiniGame: {fileID: 0}
   hateBar: {fileID: 639648340}
+  pickUpClip: {fileID: 8300000, guid: 31a8f1b02c35c00499b92c5f35964fb1, type: 3}
 --- !u!114 &1892318971
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10511,7 +10476,7 @@ GameObject:
   - component: {fileID: 2100265550}
   m_Layer: 0
   m_Name: GameManager
-  m_TagString: Untagged
+  m_TagString: GameController
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

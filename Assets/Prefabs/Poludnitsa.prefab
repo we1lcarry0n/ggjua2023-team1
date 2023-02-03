@@ -123,7 +123,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3179453854399433793}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -121.889366, y: -0.14612675, z: -27.110641}
+  m_LocalPosition: {x: -134.973, y: -0.516787, z: -24.973999}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -168,6 +168,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   spiritMiniGame: {fileID: 1873307706487771286, guid: 60e11e94d84e0524daeb58af6d731263, type: 3}
   speed: 0.08
+  deathCry: {fileID: 8300000, guid: 830f736edef723047a2c4c11c621983a, type: 3}
 --- !u!54 &3179453854399433788
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -196,15 +197,15 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: b6e05ae628ff6884bb97ffbc9529241e, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 0.871
-  m_Pitch: 1
+  m_Volume: 0.273
+  m_Pitch: 1.22
   Loop: 0
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
   Priority: 128
   DopplerLevel: 1
-  MinDistance: 3
+  MinDistance: 1.5
   MaxDistance: 10
   Pan2D: 0
   rolloffMode: 0

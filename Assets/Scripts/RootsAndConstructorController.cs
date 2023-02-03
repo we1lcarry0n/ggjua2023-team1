@@ -17,6 +17,9 @@ public class RootsAndConstructorController : MonoBehaviour
     public Slider hateBar;
 
     private Outline outline;
+
+    private AudioSource gameManager;
+    [SerializeField] private AudioClip pickUpClip;
         
     private void Start()
     {
@@ -24,6 +27,7 @@ public class RootsAndConstructorController : MonoBehaviour
         canvas = GameObject.Find("Canvas");
         outline = GetComponent<Outline>();
         HintButton.gameObject.SetActive(false);
+        gameManager = GameObject.FindGameObjectWithTag("GameController").GetComponent<AudioSource>();
     }
 
     void Update()
@@ -76,6 +80,8 @@ public class RootsAndConstructorController : MonoBehaviour
     {
         if (Input.GetKey(KeyCode.E) && player.countOfRoots == 0)
         {
+            gameManager.clip = pickUpClip;
+            gameManager.Play();
             player.countOfRoots++;
             this.gameObject.GetComponentInParent<SpawnRoots>().ChangePosition();
             Destroy(this.gameObject);
@@ -90,6 +96,8 @@ public class RootsAndConstructorController : MonoBehaviour
             {
                 if (player.countOfRoots > 0)
                 {
+                    gameManager.clip = pickUpClip;
+                    gameManager.Play();
                     Instantiate(craftMiniGame, canvas.transform);
                 }
             }
@@ -97,6 +105,8 @@ public class RootsAndConstructorController : MonoBehaviour
             {
                 if (player.countOfPuppet > 0)
                 {
+                    gameManager.clip = pickUpClip;
+                    gameManager.Play();
                     Instantiate(blessMiniGame, canvas.transform);
                 }
             }
@@ -111,12 +121,16 @@ public class RootsAndConstructorController : MonoBehaviour
             {
                 if (player.countOfPuppet > 0)
                 {
+                    gameManager.clip = pickUpClip;
+                    gameManager.Play();
                     player.countOfPuppet--;
                     hateBar.value -= 10f;
                 }
 
                 if (player.countOfUpgratedPuppet > 0)
                 {
+                    gameManager.clip = pickUpClip;
+                    gameManager.Play();
                     player.countOfUpgratedPuppet--;
                     hateBar.value -= 20f;
                 }
