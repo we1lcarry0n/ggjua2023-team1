@@ -8834,21 +8834,21 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.13713063, g: 0.64172035, b: 0.6792453, a: 1}
+  m_Color: {r: 0.6226415, g: 0.5502768, b: 0.4487718, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 0f9cbb807d87ce64597279f8df061385, type: 3}
+  m_Sprite: {fileID: 21300000, guid: c8da971533fd8984c98e17b077a41533, type: 3}
   m_Type: 3
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 0
   m_FillAmount: 1
   m_FillClockwise: 1
-  m_FillOrigin: 0
+  m_FillOrigin: 1
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
 --- !u!222 &1780934118
@@ -10928,6 +10928,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 70372710}
     m_Modifications:
+    - target: {fileID: 6735507146153163816, guid: fe57326d293018242bbe3f89d0bd12bd, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: fd64d3d7f7849664585f22fa04c4493f, type: 2}
     - target: {fileID: 2304756172517321273, guid: 17af7f00160346547972e4ee12ff2192, type: 3}
       propertyPath: m_Name
       value: ClockBox
@@ -11028,9 +11032,5 @@ PrefabInstance:
       propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 6735507146153163816, guid: fe57326d293018242bbe3f89d0bd12bd, type: 3}
-      propertyPath: m_Materials.Array.data[0]
-      value: 
-      objectReference: {fileID: 2100000, guid: fd64d3d7f7849664585f22fa04c4493f, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 17af7f00160346547972e4ee12ff2192, type: 3}
