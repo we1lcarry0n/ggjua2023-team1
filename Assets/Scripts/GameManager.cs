@@ -34,10 +34,6 @@ public class GameManager : MonoBehaviour
                 isSpawnSpirit = false;
             }
         }
-        //if(SceneManager.GetActiveScene().buildIndex >= 2)
-        //{
-            
-        //}
     }
 
     private void PoludnitsaLife()

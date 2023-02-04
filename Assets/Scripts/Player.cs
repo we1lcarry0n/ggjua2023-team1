@@ -126,5 +126,9 @@ public class Player : MonoBehaviour
     public void ApplySpeedDebuff()
     {
         StartCoroutine(WispCollisionCoroutine());
+        if(Random.Range(1, 4) == 1)
+        {
+            this.GetComponent<PlayerItemStats>().countOfRoots -= 1;
+        }
     }
 }

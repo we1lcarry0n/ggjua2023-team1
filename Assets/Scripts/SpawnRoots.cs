@@ -6,6 +6,7 @@ using UnityEngine.SceneManagement;
 public class SpawnRoots : MonoBehaviour
 {
     public RootController[] rootControllers;
+    [SerializeField] private GameObject fireflySpawner;
     public GameObject rootToSpawn;
 
     public int currentPoint;
@@ -34,6 +35,11 @@ public class SpawnRoots : MonoBehaviour
     {
         currentPosition = rootControllers[currentPoint].transform.position;
         Instantiate(rootToSpawn, currentPosition, Quaternion.identity, this.gameObject.transform);
+        if(SceneManager.GetActiveScene().buildIndex >= 2)
+        {
+            Instantiate(fireflySpawner, currentPosition, Quaternion.identity, null);
+        }
+        
     }
 
     private IEnumerator SpawnTime()
