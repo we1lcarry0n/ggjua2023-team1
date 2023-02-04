@@ -10,6 +10,8 @@ public class Player : MonoBehaviour
     public float baseSpeed;
     public float rotationSpeed;
     public float sprint;
+    private bool canMove;
+    public bool CanMove { get { return canMove; } set { canMove = value; } }
 
     [SerializeField] private float maxStamina;
     [SerializeField] private float staminaConsumption;
@@ -31,6 +33,11 @@ public class Player : MonoBehaviour
 
     private void Update()
     {
+        if (!canMove)
+        {
+            return;
+        }
+
         float x = Input.GetAxis("Horizontal");
         float z = Input.GetAxis("Vertical");
 

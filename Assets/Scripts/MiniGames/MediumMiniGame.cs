@@ -36,6 +36,7 @@ public class MediumMiniGame : MonoBehaviour
     {
         StartCoroutine(StartMiniGame());
         player = GameObject.Find("Player").GetComponent<PlayerItemStats>();
+        player.GetComponent<Player>().CanMove = false;
         gameManager = GameObject.FindGameObjectWithTag("GameController").GetComponent<AudioSource>();
     }
 
@@ -131,6 +132,7 @@ public class MediumMiniGame : MonoBehaviour
         reactionBarAngle = 0;
         checkCount = 0;
         stopGame = true;
+        player.GetComponent<Player>().CanMove = true;
         Debug.Log("You lose");
     }
 
@@ -146,6 +148,7 @@ public class MediumMiniGame : MonoBehaviour
         }
         checkCount = 0;
         stopGame = true;
+        player.GetComponent<Player>().CanMove = true;
         Debug.Log("You win");
         StartCoroutine(ShowWinningTable());
     }

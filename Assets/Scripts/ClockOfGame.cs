@@ -108,6 +108,7 @@ public class ClockOfGame : MonoBehaviour
 
     private IEnumerator StartNight()
     {
+        GameObject.FindGameObjectWithTag("Player").GetComponent<Player>().CanMove = false;
         welcomeWindow.gameObject.SetActive(!welcomeWindow.gameObject.activeSelf);
         welcomeWindow.gameObject.transform.localScale = Vector3.zero;
         for (float i = 0; i < 1f; i += Time.deltaTime)
@@ -120,6 +121,7 @@ public class ClockOfGame : MonoBehaviour
 
     public void CloseWelcomeWindow()
     {
+        GameObject.FindGameObjectWithTag("Player").GetComponent<Player>().CanMove = true;
         welcomeWindow.gameObject.SetActive(!welcomeWindow.gameObject.activeSelf);
         canPlay = true;
     }

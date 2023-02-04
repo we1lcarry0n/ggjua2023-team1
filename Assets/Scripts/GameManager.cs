@@ -21,15 +21,7 @@ public class GameManager : MonoBehaviour
 
     void Update()
     {
-        if(SceneManager.GetActiveScene().buildIndex <= 1)
-        {
-            throw new NotImplementedException();
-        }
-        else if(SceneManager.GetActiveScene().buildIndex <= 2)
-        {
-            throw new NotImplementedException();
-        }
-        else
+        if(SceneManager.GetActiveScene().buildIndex == 3)
         {
             if (playerStats.countOfUpgratedPuppet == 1 && !isSpawnSpirit)
             {
@@ -41,6 +33,10 @@ public class GameManager : MonoBehaviour
             {
                 isSpawnSpirit = false;
             }
+        }
+        if(SceneManager.GetActiveScene().buildIndex >= 2)
+        {
+            throw new NotImplementedException();
         }
     }
 
