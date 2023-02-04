@@ -717,9 +717,9 @@ MonoBehaviour:
   repeatTab: {fileID: 2173202081247124083}
   winningTab: {fileID: 6474951836066493773}
   miniGameBox: {fileID: 7051079722787210640}
-  reactionCount: 10
+  reactionCount: 6
   reactionLength: 60
-  pointerSpeed: 1
+  pointerSpeed: 1.5
   isFireFly: 1
 --- !u!1 &1724974196589348415
 GameObject:

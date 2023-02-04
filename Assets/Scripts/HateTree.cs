@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class HateTree : MonoBehaviour
 {
@@ -30,6 +31,7 @@ public class HateTree : MonoBehaviour
 
         if (hateBar.value == hateBar.maxValue)
         {
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
             Debug.Log("LoseGame");
         }
     }
