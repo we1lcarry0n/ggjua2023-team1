@@ -50,6 +50,8 @@ public class Player : MonoBehaviour
 
     private void AdjustAnimation()
     {
+        animator.Play(baseSpeed == 1.5 ? "Slowmotion" : "Locomotion");
+
         if (movementDirection.z == 0 && movementDirection.x == 0)
         {
             animator.SetFloat("Speed", 0, .1f, Time.deltaTime);
@@ -105,5 +107,17 @@ public class Player : MonoBehaviour
             staminaBar.enabled = true;
         }
         staminaBar.fillAmount = currentStamina / maxStamina;
+    }
+
+    private IEnumerator WispCollisionCoroutine()
+    {
+        baseSpeed *= .5f;
+        yield return new WaitForSeconds(5f);
+        baseSpeed *= 2f;
+    }
+
+    public void ApplySpeedDebuff()
+    {
+        StartCoroutine(WispCollisionCoroutine());
     }
 }

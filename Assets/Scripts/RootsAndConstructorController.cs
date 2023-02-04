@@ -20,6 +20,7 @@ public class RootsAndConstructorController : MonoBehaviour
 
     private AudioSource gameManager;
     [SerializeField] private AudioClip pickUpClip;
+    [SerializeField] private Animator treeHandAnimator;
         
     private void Start()
     {
@@ -121,6 +122,7 @@ public class RootsAndConstructorController : MonoBehaviour
             {
                 if (player.countOfPuppet > 0)
                 {
+                    treeHandAnimator.Play("Dive");
                     gameManager.clip = pickUpClip;
                     gameManager.Play();
                     player.countOfPuppet--;
@@ -129,6 +131,7 @@ public class RootsAndConstructorController : MonoBehaviour
 
                 if (player.countOfUpgratedPuppet > 0)
                 {
+                    treeHandAnimator.Play("Dive");
                     gameManager.clip = pickUpClip;
                     gameManager.Play();
                     player.countOfUpgratedPuppet--;

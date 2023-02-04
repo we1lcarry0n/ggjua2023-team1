@@ -181,11 +181,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   clockSlider: {fileID: 2304756172508703953}
   timeOfClock: {fileID: 2304756173629181412}
+  endNight: {fileID: 0}
+  welcomeWindow: {fileID: 0}
   clockMax: 600
+  canPlay: 0
   globalLight: {fileID: 0}
   colorToMix:
     serializedVersion: 2
-    rgba: 4278321666
+    rgba: 4278716424
 --- !u!1 &2304756173059227064
 GameObject:
   m_ObjectHideFlags: 0

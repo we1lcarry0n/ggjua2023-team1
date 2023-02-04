@@ -8,6 +8,7 @@ public class HateTree : MonoBehaviour
 {
     public Slider hateBar;
     public TMP_Text hateNum;
+    public ClockOfGame clockBox;
     public float maxHateTree;
     public float hateSpeed;
 
@@ -20,9 +21,12 @@ public class HateTree : MonoBehaviour
 
     void Update()
     {
-        hateBar.value += Time.deltaTime * hateSpeed;
-        currentHate = hateBar.value;
-        hateNum.text = currentHate.ToString("F0") + " / " + maxHateTree;
+        if (clockBox.canPlay)
+        {
+            hateBar.value += Time.deltaTime * hateSpeed;
+            currentHate = hateBar.value;
+            hateNum.text = currentHate.ToString("F0") + " / " + maxHateTree;
+        }
 
         if (hateBar.value == hateBar.maxValue)
         {
