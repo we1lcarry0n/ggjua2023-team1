@@ -230,7 +230,7 @@ MonoBehaviour:
   - {fileID: 1674786556}
   - {fileID: 1879179504}
   - {fileID: 1015227514}
-  fireflySpawner: {fileID: 0}
+  fireflySpawner: {fileID: 514193438712518118, guid: 243404b68ceb631488819b091809f514, type: 3}
   rootToSpawn: {fileID: 835374992}
   currentPoint: 0
   newPoint: 0
@@ -3158,7 +3158,7 @@ GameObject:
   - component: {fileID: 474556284}
   m_Layer: 0
   m_Name: Altair Spot
-  m_TagString: Untagged
+  m_TagString: BlessingAltar
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 4
@@ -3555,6 +3555,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1386955338, guid: 4efe4c6cfc0820240ae470369b1061fc, type: 3}
+      propertyPath: m_Volume
+      value: 0.839
+      objectReference: {fileID: 0}
     - target: {fileID: 2832156880833351248, guid: 4efe4c6cfc0820240ae470369b1061fc, type: 3}
       propertyPath: sprint
       value: 1.5

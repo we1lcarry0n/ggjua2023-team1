@@ -179,7 +179,7 @@ MonoBehaviour:
   pointsContainer: {fileID: 0}
   points: []
   fireFlyMiniGame: {fileID: 7051079722787210640, guid: f1a0f6182fda9e3478858e06bbf4c60d, type: 3}
-  speed: 0.2
+  speed: 2
   curentPoint: 0
 --- !u!54 &-7590360117840390579
 Rigidbody:
@@ -209,7 +209,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: a324e0bc2c8f3a247983fb8803e96188, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 0.783
+  m_Volume: 0.695
   m_Pitch: 1.8
   Loop: 1
   Mute: 0
