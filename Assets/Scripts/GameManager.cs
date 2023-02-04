@@ -1,6 +1,9 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEditor.SceneManagement;
+using UnityEngine.SceneManagement;
+using System;
 
 public class GameManager : MonoBehaviour
 {
@@ -18,14 +21,26 @@ public class GameManager : MonoBehaviour
 
     void Update()
     {
-        if (playerStats.countOfUpgratedPuppet == 1 && !isSpawnSpirit)
+        if(SceneManager.GetActiveScene().buildIndex <= 1)
         {
-            Instantiate(poludnitsa);
-            PoludnitsaLife();
-            isSpawnSpirit = true;
-        }else if (playerStats.countOfUpgratedPuppet == 0)
+            throw new NotImplementedException();
+        }
+        else if(SceneManager.GetActiveScene().buildIndex <= 2)
         {
-            isSpawnSpirit = false;
+            throw new NotImplementedException();
+        }
+        else
+        {
+            if (playerStats.countOfUpgratedPuppet == 1 && !isSpawnSpirit)
+            {
+                Instantiate(poludnitsa);
+                PoludnitsaLife();
+                isSpawnSpirit = true;
+            }
+            else if (playerStats.countOfUpgratedPuppet == 0)
+            {
+                isSpawnSpirit = false;
+            }
         }
     }
 
