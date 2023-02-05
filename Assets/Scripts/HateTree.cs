@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class HateTree : MonoBehaviour
 {
@@ -11,6 +12,7 @@ public class HateTree : MonoBehaviour
     public ClockOfGame clockBox;
     public float maxHateTree;
     public float hateSpeed;
+    public Image loseWindow;
 
     private float currentHate;
 
@@ -31,6 +33,22 @@ public class HateTree : MonoBehaviour
         if (hateBar.value == hateBar.maxValue)
         {
             Debug.Log("LoseGame");
+            StartCoroutine(LoseTimer());
         }
+    }
+
+    private IEnumerator LoseTimer()
+    {
+        loseWindow.gameObject.SetActive(true);
+        loseWindow.gameObject.transform.localScale = Vector3.zero;
+        for (float i = 0; i < 1f; i += Time.deltaTime)
+        {
+            loseWindow.gameObject.transform.localScale = Vector3.one * i;
+            yield return null;
+        }
+        loseWindow.gameObject.transform.localScale = Vector3.one;
+        yield return new WaitForSeconds(2f);
+
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
 }

@@ -13,26 +13,29 @@ public class Firefly : MonoBehaviour
 
     private Transform playerTransform;
     private GameObject canvas;
+
+    
     private void Start()
     {
         canvas = GameObject.Find("Canvas");
+        pointsContainer = transform.parent;
 
-        for (int i = 0; i < pointsContainer.childCount; i++)
+        for (int i = 0; i < pointsContainer.childCount-1; i++)
         {
             points.Add(pointsContainer.GetChild(i));
         }
     }
 
-    private void FixedUpdate()
+    private void Update()
     {
 
         if (playerTransform)
         {
-            transform.position = Vector3.MoveTowards(transform.position, playerTransform.position, speed);
+            transform.position = Vector3.MoveTowards(transform.position, playerTransform.position, speed*Time.deltaTime);
         }
         else
         {
-            transform.position = Vector3.MoveTowards(transform.position, points[curentPoint].position, speed);
+            transform.position = Vector3.MoveTowards(transform.position, points[curentPoint].position, speed*Time.deltaTime);
 
             if (transform.position == points[curentPoint].position)
             {

@@ -1,7 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEditor.SceneManagement;
 using UnityEngine.SceneManagement;
 using System;
 
@@ -21,15 +20,7 @@ public class GameManager : MonoBehaviour
 
     void Update()
     {
-        if(SceneManager.GetActiveScene().buildIndex <= 1)
-        {
-            throw new NotImplementedException();
-        }
-        else if(SceneManager.GetActiveScene().buildIndex <= 2)
-        {
-            throw new NotImplementedException();
-        }
-        else
+        if(SceneManager.GetActiveScene().buildIndex == 4)
         {
             if (playerStats.countOfUpgratedPuppet == 1 && !isSpawnSpirit)
             {

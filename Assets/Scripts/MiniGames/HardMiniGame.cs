@@ -39,6 +39,7 @@ public class HardMiniGame : MonoBehaviour
     {
         StartCoroutine(StartMiniGame());
         player = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerItemStats>();
+        player.GetComponent<Player>().CanMove = false;
         gameManager = GameObject.FindGameObjectWithTag("GameController").GetComponent<AudioSource>();
     }
 
@@ -167,6 +168,7 @@ public class HardMiniGame : MonoBehaviour
         checkCount = 0;
         isReverse = false;
         stopGame = true;
+        player.GetComponent<Player>().CanMove = true;
         Debug.Log("You lose");
     }
 
@@ -182,6 +184,7 @@ public class HardMiniGame : MonoBehaviour
         }
         checkCount = 0;
         stopGame = true;
+        player.GetComponent<Player>().CanMove = true;
         Debug.Log("You win");
         StartCoroutine(ShowWinningTable());
     }

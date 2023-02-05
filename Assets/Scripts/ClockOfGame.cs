@@ -49,7 +49,7 @@ public class ClockOfGame : MonoBehaviour
         if (isPlay && canPlay)
         {
             clockSlider.value -= Time.deltaTime;
-            minute += Time.deltaTime * 0.7f ;
+            minute += Time.deltaTime * 1.4f;
             colorMinute += Time.deltaTime;
 
             if (minute >= 59)
@@ -99,15 +99,13 @@ public class ClockOfGame : MonoBehaviour
         }
         endNight.gameObject.transform.localScale = Vector3.one;
         yield return new WaitForSeconds(2f);
-        if (SceneManager.GetActiveScene().buildIndex == 3)
-        {
-            SceneManager.LoadScene(0);
-        }
+        
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
     }
 
     private IEnumerator StartNight()
     {
+        GameObject.FindGameObjectWithTag("Player").GetComponent<Player>().CanMove = false;
         welcomeWindow.gameObject.SetActive(!welcomeWindow.gameObject.activeSelf);
         welcomeWindow.gameObject.transform.localScale = Vector3.zero;
         for (float i = 0; i < 1f; i += Time.deltaTime)
@@ -120,6 +118,7 @@ public class ClockOfGame : MonoBehaviour
 
     public void CloseWelcomeWindow()
     {
+        GameObject.FindGameObjectWithTag("Player").GetComponent<Player>().CanMove = true;
         welcomeWindow.gameObject.SetActive(!welcomeWindow.gameObject.activeSelf);
         canPlay = true;
     }

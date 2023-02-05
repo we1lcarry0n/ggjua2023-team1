@@ -9,12 +9,18 @@ EditorBuildSettings:
     path: Assets/Scenes/Menu.unity
     guid: 3943a3a2308cb1f4eb9990394f926735
   - enabled: 1
+    path: Assets/Scenes/Pause Testing.unity
+    guid: 92971c82e40fbc2488d637bd61aa4743
+  - enabled: 1
     path: Assets/Scenes/Day1.unity
     guid: 5e81748151bc25f449ab595ac612abc2
-  - enabled: 0
-    path: 
-    guid: 00000000000000000000000000000000
-  - enabled: 0
-    path: 
-    guid: 00000000000000000000000000000000
+  - enabled: 1
+    path: Assets/Scenes/Day2.unity
+    guid: e065538488554bf4f81235a8ba5992d5
+  - enabled: 1
+    path: Assets/Scenes/Day3.unity
+    guid: 93728a859cf3df642b0060408f995258
+  - enabled: 1
+    path: Assets/Scenes/Titles.unity
+    guid: 4d5121ae6aeee704cac29766dd14c15e
   m_configObjects: {}

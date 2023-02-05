@@ -28,9 +28,11 @@ public class EasyMiniGame : MonoBehaviour
     private bool canRestart;
     public bool isFireFly;
 
+
     void Start()
     {
         player = GameObject.FindGameObjectWithTag("Player").GetComponent<Player>();
+        player.CanMove = false;
         StartCoroutine(ShowMiniGame());
         StartCoroutine(StartMiniGame());
     }
@@ -120,6 +122,7 @@ public class EasyMiniGame : MonoBehaviour
         checkCount = 0;
         stopGame = true;
         player.ApplySpeedDebuff();
+        player.CanMove = true;
         Debug.Log("You lose");
     }
 
@@ -129,6 +132,7 @@ public class EasyMiniGame : MonoBehaviour
         checkCount = 0;
         stopGame = true;
         player.RegenerateStamina(100f);
+        player.CanMove = true;
         Debug.Log("You win");
         StartCoroutine(ShowWinningTable());
     }
