@@ -99,10 +99,7 @@ public class ClockOfGame : MonoBehaviour
         }
         endNight.gameObject.transform.localScale = Vector3.one;
         yield return new WaitForSeconds(2f);
-        if (SceneManager.GetActiveScene().buildIndex == 3)
-        {
-            SceneManager.LoadScene(0);
-        }
+        
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
     }
 
