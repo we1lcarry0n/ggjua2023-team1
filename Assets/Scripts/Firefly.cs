@@ -20,7 +20,7 @@ public class Firefly : MonoBehaviour
         canvas = GameObject.Find("Canvas");
         pointsContainer = transform.parent;
 
-        for (int i = 0; i < pointsContainer.childCount; i++)
+        for (int i = 0; i < pointsContainer.childCount-1; i++)
         {
             points.Add(pointsContainer.GetChild(i));
         }
