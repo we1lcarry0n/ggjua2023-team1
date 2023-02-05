@@ -20,7 +20,7 @@ public class GameManager : MonoBehaviour
 
     void Update()
     {
-        if(SceneManager.GetActiveScene().buildIndex == 3)
+        if(SceneManager.GetActiveScene().buildIndex == 4)
         {
             if (playerStats.countOfUpgratedPuppet == 1 && !isSpawnSpirit)
             {

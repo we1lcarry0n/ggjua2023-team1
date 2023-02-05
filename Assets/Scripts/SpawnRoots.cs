@@ -35,7 +35,7 @@ public class SpawnRoots : MonoBehaviour
     {
         currentPosition = rootControllers[currentPoint].transform.position;
         Instantiate(rootToSpawn, currentPosition, Quaternion.identity, this.gameObject.transform);
-        if(SceneManager.GetActiveScene().buildIndex >= 2)
+        if(SceneManager.GetActiveScene().buildIndex >= 3)
         {
             Instantiate(fireflySpawner, currentPosition, Quaternion.identity, null);
         }
